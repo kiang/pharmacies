@@ -1,7 +1,7 @@
 <?php
 
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
-//file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
+file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
 
 $fh1 = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $ref = array();
