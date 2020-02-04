@@ -21,7 +21,7 @@ function pointStyleFunction(f, r) {
   }
   return new ol.style.Style({
     image: new ol.style.RegularShape({
-      radius: 10,
+      radius: 15,
       points: 3,
       fill: new ol.style.Fill({
         color: color
