@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "高雄市內門區觀亭里中正路160巷51號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "完全比對",
+      "OutMatchCode": "[高雄市]\tFULL:1",
+      "OutTraceInfo": "[高雄市]\t { 完全比對 } 找到符合的門牌地址"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "高雄市內門區觀亭里14鄰中正路160巷51號",
+      "COUNTY": "高雄市",
+      "TOWN": "內門區",
+      "VILLAGE": "觀亭里",
+      "NEIGHBORHOOD": "14鄰",
+      "ROAD": "中正路",
+      "SECTION": "",
+      "LANE": "160巷",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "51號",
+      "X": 120.453867,
+      "Y": 22.923202
+    }
+  ]
+}</string>

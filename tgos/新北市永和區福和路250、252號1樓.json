@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "新北市永和區福和路250、252號1樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[新北市]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-249684),E:-1,N:-1",
+      "OutTraceInfo": "[新北市]\t { 模糊比對 } (永和區)\t找到符合的[鄉鎮市區]，(福和路)\t找到符合的[路街名]，(250252號)\t進行[雙號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -249684 號，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "新北市永和區福和里7鄰福和路568號",
+      "COUNTY": "新北市",
+      "TOWN": "永和區",
+      "VILLAGE": "福和里",
+      "NEIGHBORHOOD": "7鄰",
+      "ROAD": "福和路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "568號",
+      "X": 121.517204,
+      "Y": 25.006228
+    }
+  ]
+}</string>

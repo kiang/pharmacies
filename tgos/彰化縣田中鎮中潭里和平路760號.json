@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "彰化縣田中鎮中潭里和平路760號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[彰化縣]\tT:1,V:1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+2)(-2),E:-1,N:-1",
+      "OutTraceInfo": "[彰化縣]\t { 模糊比對 } (田中鎮)\t找到符合的[鄉鎮市區]，(中潭里)\t找到符合的[村里]，(和平路)\t找到符合的[路街名]，(760號)\t進行[雙號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +2 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -2 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "彰化縣田中鎮中潭里3鄰和平路758號",
+      "COUNTY": "彰化縣",
+      "TOWN": "田中鎮",
+      "VILLAGE": "中潭里",
+      "NEIGHBORHOOD": "3鄰",
+      "ROAD": "和平路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "758號",
+      "X": 120.587850,
+      "Y": 23.868501
+    },
+    {
+      "FULL_ADDR": "彰化縣田中鎮中潭里3鄰和平路762號",
+      "COUNTY": "彰化縣",
+      "TOWN": "田中鎮",
+      "VILLAGE": "中潭里",
+      "NEIGHBORHOOD": "3鄰",
+      "ROAD": "和平路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "762號",
+      "X": 120.587777,
+      "Y": 23.868447
+    }
+  ]
+}</string>

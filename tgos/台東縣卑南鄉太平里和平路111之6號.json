@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺東縣卑南鄉太平里和平路111之6號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺東縣]\tT:1,V:2,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[臺東縣]\t { 模糊比對 } (卑南鄉)\t找到符合的[鄉鎮市區]，(太平里)\t找不到符合的[村里]，進行轉換搜尋[村變成里，里變成村]，轉換搜尋找到符合的[村里]，(和平路)\t找到符合的[路街名]，(111之6號)\t找到符合的[門牌號碼]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺東縣卑南鄉太平村14鄰和平路111之6號",
+      "COUNTY": "臺東縣",
+      "TOWN": "卑南鄉",
+      "VILLAGE": "太平村",
+      "NEIGHBORHOOD": "14鄰",
+      "ROAD": "和平路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "111之6號",
+      "X": 121.086724,
+      "Y": 22.782415
+    }
+  ]
+}</string>

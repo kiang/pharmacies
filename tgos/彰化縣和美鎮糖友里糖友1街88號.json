@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "彰化縣和美鎮糖友里糖友1街88號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[彰化縣]\tT:1,V:1,R:0,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[彰化縣]\t { 模糊比對 } (和美鎮)\t找到符合的[鄉鎮市區]，(糖友里)\t找到符合的[村里]，(糖友1街)\t找不到符合的[路街名]，進行轉換搜尋[街變成路，路變成街]，進行轉換搜尋[路變成地區名]，轉換搜尋找不到符合的[路街名]，(88號)\t找到符合的[門牌號碼]，進行[雙號過濾]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "彰化縣和美鎮糖友里16鄰糖東二街88號",
+      "COUNTY": "彰化縣",
+      "TOWN": "和美鎮",
+      "VILLAGE": "糖友里",
+      "NEIGHBORHOOD": "16鄰",
+      "ROAD": "糖東二街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "88號",
+      "X": 120.532572,
+      "Y": 24.108598
+    },
+    {
+      "FULL_ADDR": "彰化縣和美鎮糖友里18鄰糖東一街88號",
+      "COUNTY": "彰化縣",
+      "TOWN": "和美鎮",
+      "VILLAGE": "糖友里",
+      "NEIGHBORHOOD": "18鄰",
+      "ROAD": "糖東一街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "88號",
+      "X": 120.532798,
+      "Y": 24.107768
+    },
+    {
+      "FULL_ADDR": "彰化縣和美鎮糖友里22鄰糖友三街88號",
+      "COUNTY": "彰化縣",
+      "TOWN": "和美鎮",
+      "VILLAGE": "糖友里",
+      "NEIGHBORHOOD": "22鄰",
+      "ROAD": "糖友三街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "88號",
+      "X": 120.531415,
+      "Y": 24.109780
+    },
+    {
+      "FULL_ADDR": "彰化縣和美鎮糖友里24鄰糖友一街88號",
+      "COUNTY": "彰化縣",
+      "TOWN": "和美鎮",
+      "VILLAGE": "糖友里",
+      "NEIGHBORHOOD": "24鄰",
+      "ROAD": "糖友一街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "88號",
+      "X": 120.534383,
+      "Y": 24.108350
+    }
+  ]
+}</string>

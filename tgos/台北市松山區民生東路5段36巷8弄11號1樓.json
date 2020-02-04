@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺北市松山區民生東路5段36巷8弄11號1樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "完全比對",
+      "OutMatchCode": "[臺北市]\tFULL:1",
+      "OutTraceInfo": "[臺北市]\t { 完全比對 } 找到符合的門牌地址"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺北市松山區介壽里18鄰民生東路五段36巷8弄11號",
+      "COUNTY": "臺北市",
+      "TOWN": "松山區",
+      "VILLAGE": "介壽里",
+      "NEIGHBORHOOD": "18鄰",
+      "ROAD": "民生東路",
+      "SECTION": "5",
+      "LANE": "36巷",
+      "ALLEY": "8弄",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "11號",
+      "X": 121.559856,
+      "Y": 25.057333
+    }
+  ]
+}</string>

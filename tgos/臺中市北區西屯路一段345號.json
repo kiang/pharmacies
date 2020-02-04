@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺中市北區西屯路一段345號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "3",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺中市]\tT:1,V:-1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+2)(-2),E:-1,N:-1",
+      "OutTraceInfo": "[臺中市]\t { 模糊比對 } (北區)\t找到符合的[鄉鎮市區]，(西屯路)\t找到符合的[路街名]，(1)\t找到符合的[路段]，(345號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +2 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -2 號，進行[找最小門牌的號之、之號]，模糊比對找到 3 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺中市北區健行里1鄰西屯路一段347之1號",
+      "COUNTY": "臺中市",
+      "TOWN": "北區",
+      "VILLAGE": "健行里",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "西屯路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "347之1號",
+      "X": 120.665307,
+      "Y": 24.160222
+    },
+    {
+      "FULL_ADDR": "臺中市北區健行里1鄰西屯路一段347之2號",
+      "COUNTY": "臺中市",
+      "TOWN": "北區",
+      "VILLAGE": "健行里",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "西屯路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "347之2號",
+      "X": 120.665275,
+      "Y": 24.160260
+    },
+    {
+      "FULL_ADDR": "臺中市北區健行里1鄰西屯路一段347之3號",
+      "COUNTY": "臺中市",
+      "TOWN": "北區",
+      "VILLAGE": "健行里",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "西屯路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "347之3號",
+      "X": 120.665168,
+      "Y": 24.160200
+    }
+  ]
+}</string>

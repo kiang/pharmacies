@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "彰化縣員林市仁美里中山路2段110、112號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[彰化縣]\tT:1,V:1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-109984),E:-1,N:-1",
+      "OutTraceInfo": "[彰化縣]\t { 模糊比對 } (員林市)\t找到符合的[鄉鎮市區]，(仁美里)\t找到符合的[村里]，(中山路)\t找到符合的[路街名]，(2)\t找到符合的[路段]，(110112號)\t進行[雙號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -109984 號，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "彰化縣員林市仁美里4鄰中山路二段128號",
+      "COUNTY": "彰化縣",
+      "TOWN": "員林市",
+      "VILLAGE": "仁美里",
+      "NEIGHBORHOOD": "4鄰",
+      "ROAD": "中山路",
+      "SECTION": "2",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "128號",
+      "X": 120.571325,
+      "Y": 23.963879
+    }
+  ]
+}</string>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "嘉義縣鹿草鄉鹿草村491號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[嘉義縣]\tT:1,V:1,R:-1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+4)(-196),E:-1,N:-1",
+      "OutTraceInfo": "[嘉義縣]\t { 模糊比對 } (鹿草鄉)\t找到符合的[鄉鎮市區]，(鹿草村)\t找到符合的[村里]，(491號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +4 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -196 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "嘉義縣鹿草鄉鹿草村17鄰圓山路295號",
+      "COUNTY": "嘉義縣",
+      "TOWN": "鹿草鄉",
+      "VILLAGE": "鹿草村",
+      "NEIGHBORHOOD": "17鄰",
+      "ROAD": "圓山路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "295號",
+      "X": 120.306955,
+      "Y": 23.413502
+    },
+    {
+      "FULL_ADDR": "嘉義縣鹿草鄉鹿草村18鄰鹿草495號",
+      "COUNTY": "嘉義縣",
+      "TOWN": "鹿草鄉",
+      "VILLAGE": "鹿草村",
+      "NEIGHBORHOOD": "18鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "495號",
+      "X": 120.310144,
+      "Y": 23.409953
+    }
+  ]
+}</string>

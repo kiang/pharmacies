@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "嘉義市東區府路里延平街280號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[嘉義市]\tT:1,V:0,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-42),E:-1,N:-1",
+      "OutTraceInfo": "[嘉義市]\t { 模糊比對 } (東區)\t找到符合的[鄉鎮市區]，(府路里)\t找不到符合的[村里]，進行轉換搜尋[村變成里，里變成村]，轉換搜尋找不到進行[忽略村里]，(延平街)\t找到符合的[路街名]，(280號)\t進行[雙號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -42 號，進行[找最小門牌的號之、之號]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "嘉義市東區過溝里16鄰延平街238號之1",
+      "COUNTY": "嘉義市",
+      "TOWN": "東區",
+      "VILLAGE": "過溝里",
+      "NEIGHBORHOOD": "16鄰",
+      "ROAD": "延平街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "238號之1",
+      "X": 120.450250,
+      "Y": 23.476830
+    }
+  ]
+}</string>

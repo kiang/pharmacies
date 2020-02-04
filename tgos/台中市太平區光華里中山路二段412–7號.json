@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺中市太平區光華里中山路二段412–7號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "0",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺中市]\tT:1,V:1,R:1,-S:0,L:-1,A:-1,SA:-1,T:-1,AR:0,NO:0,E:-1,N:-1",
+      "OutTraceInfo": "[臺中市]\t { 模糊比對 } (太平區)\t找到符合的[鄉鎮市區]，(光華里)\t找到符合的[村里]，(中山路)\t找到符合的[路街名]，(2)\t找不到符合的[路段]，(四一二–)\t找不到符合的[地區]，進行轉換搜尋[路或街變成地區名]，轉換搜尋找不到符合的[地區]，(7號)\t模糊比對找不到符合的門牌地址。"
+    }
+  ],
+  "AddressList": []
+}</string>

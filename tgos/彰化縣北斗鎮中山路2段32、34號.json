@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "彰化縣北斗鎮中山路2段32、34號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[彰化縣]\tT:1,V:-1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-2682),E:-1,N:-1",
+      "OutTraceInfo": "[彰化縣]\t { 模糊比對 } (北斗鎮)\t找到符合的[鄉鎮市區]，(中山路)\t找到符合的[路街名]，(2)\t找到符合的[路段]，(3234號)\t進行[雙號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -2682 號，進行[找最小門牌的號之、之號]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "彰化縣北斗鎮大道里3鄰中山路二段552之1號",
+      "COUNTY": "彰化縣",
+      "TOWN": "北斗鎮",
+      "VILLAGE": "大道里",
+      "NEIGHBORHOOD": "3鄰",
+      "ROAD": "中山路",
+      "SECTION": "2",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "552之1號",
+      "X": 120.522930,
+      "Y": 23.882783
+    }
+  ]
+}</string>

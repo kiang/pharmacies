@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺南市鹽水區武廟里三福路70號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺南市]\tT:1,V:0,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[臺南市]\t { 模糊比對 } (鹽水區)\t找到符合的[鄉鎮市區]，(武廟里)\t找不到符合的[村里]，進行轉換搜尋[村變成里，里變成村]，轉換搜尋找不到進行[忽略村里]，(三福路)\t找到符合的[路街名]，(70號)\t找到符合的[門牌號碼]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺南市鹽水區津城里9鄰三福路70號",
+      "COUNTY": "臺南市",
+      "TOWN": "鹽水區",
+      "VILLAGE": "津城里",
+      "NEIGHBORHOOD": "9鄰",
+      "ROAD": "三福路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "70號",
+      "X": 120.266187,
+      "Y": 23.321078
+    }
+  ]
+}</string>

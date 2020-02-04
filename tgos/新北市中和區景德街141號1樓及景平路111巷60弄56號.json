@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "新北市中和區景德街141號1樓及景平路111巷60弄56號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[新北市]\tT:1,V:-1,R:1,S:-1,L:0,A:0,SA:-1,T:-1,AR:0,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[新北市]\t { 模糊比對 } (中和區)\t找到符合的[鄉鎮市區]，(景德街)\t找到符合的[路街名]，(141號1樓及景平路111巷)\t找不到符合的[巷]，(60弄)\t找不到符合的[弄]，(141號1樓及景平路111巷)\t找不到符合的[地區]，進行轉換搜尋[路或街變成地區名]，轉換搜尋找不到符合的[地區]，(56號)\t找到符合的[門牌號碼]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "新北市中和區秀士里18鄰景德街56號",
+      "COUNTY": "新北市",
+      "TOWN": "中和區",
+      "VILLAGE": "秀士里",
+      "NEIGHBORHOOD": "18鄰",
+      "ROAD": "景德街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "56號",
+      "X": 121.517462,
+      "Y": 24.991559
+    }
+  ]
+}</string>

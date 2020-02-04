@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺中市北屯區四民里昌平路二段54–3號1樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺中市]\tT:1,V:1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:0,NO:0(+48),E:-1,N:-1",
+      "OutTraceInfo": "[臺中市]\t { 模糊比對 } (北屯區)\t找到符合的[鄉鎮市區]，(四民里)\t找到符合的[村里]，(昌平路)\t找到符合的[路街名]，(2)\t找到符合的[路段]，(五四–)\t找不到符合的[地區]，進行轉換搜尋[路或街變成地區名]，轉換搜尋找不到符合的[地區]，(3號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +48 號，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺中市北屯區四民里8鄰昌平路二段51號",
+      "COUNTY": "臺中市",
+      "TOWN": "北屯區",
+      "VILLAGE": "四民里",
+      "NEIGHBORHOOD": "8鄰",
+      "ROAD": "昌平路",
+      "SECTION": "2",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "51號",
+      "X": 120.682540,
+      "Y": 24.191881
+    }
+  ]
+}</string>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "新北市中和區新生街206、208號1樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[新北市]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-205918),E:-1,N:-1",
+      "OutTraceInfo": "[新北市]\t { 模糊比對 } (中和區)\t找到符合的[鄉鎮市區]，(新生街)\t找到符合的[路街名]，(206208號)\t進行[雙號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -205918 號，進行[找最小門牌的號之、之號]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "新北市中和區信和里31鄰新生街290之1號",
+      "COUNTY": "新北市",
+      "TOWN": "中和區",
+      "VILLAGE": "信和里",
+      "NEIGHBORHOOD": "31鄰",
+      "ROAD": "新生街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "290之1號",
+      "X": 121.483565,
+      "Y": 24.996439
+    },
+    {
+      "FULL_ADDR": "新北市中和區信和里31鄰新生街290之2號",
+      "COUNTY": "新北市",
+      "TOWN": "中和區",
+      "VILLAGE": "信和里",
+      "NEIGHBORHOOD": "31鄰",
+      "ROAD": "新生街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "290之2號",
+      "X": 121.483565,
+      "Y": 24.996439
+    },
+    {
+      "FULL_ADDR": "新北市中和區信和里31鄰新生街290之3號",
+      "COUNTY": "新北市",
+      "TOWN": "中和區",
+      "VILLAGE": "信和里",
+      "NEIGHBORHOOD": "31鄰",
+      "ROAD": "新生街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "290之3號",
+      "X": 121.483565,
+      "Y": 24.996439
+    },
+    {
+      "FULL_ADDR": "新北市中和區信和里31鄰新生街290之4號",
+      "COUNTY": "新北市",
+      "TOWN": "中和區",
+      "VILLAGE": "信和里",
+      "NEIGHBORHOOD": "31鄰",
+      "ROAD": "新生街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "290之4號",
+      "X": 121.483565,
+      "Y": 24.996439
+    }
+  ]
+}</string>

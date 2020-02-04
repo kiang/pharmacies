@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺中市南屯區中和里黎明路一段38號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺中市]\tT:1,V:1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+1)(-3),E:-1,N:-1",
+      "OutTraceInfo": "[臺中市]\t { 模糊比對 } (南屯區)\t找到符合的[鄉鎮市區]，(中和里)\t找到符合的[村里]，(黎明路)\t找到符合的[路街名]，(1)\t找到符合的[路段]，(38號)\t進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +1 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -3 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺中市南屯區中和里17鄰黎明路一段35號",
+      "COUNTY": "臺中市",
+      "TOWN": "南屯區",
+      "VILLAGE": "中和里",
+      "NEIGHBORHOOD": "17鄰",
+      "ROAD": "黎明路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "35號",
+      "X": 120.625844,
+      "Y": 24.112921
+    },
+    {
+      "FULL_ADDR": "臺中市南屯區中和里11鄰黎明路一段39號",
+      "COUNTY": "臺中市",
+      "TOWN": "南屯區",
+      "VILLAGE": "中和里",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "黎明路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "39號",
+      "X": 120.625754,
+      "Y": 24.113091
+    }
+  ]
+}</string>

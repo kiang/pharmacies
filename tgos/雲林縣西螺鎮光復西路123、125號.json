@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "雲林縣西螺鎮光復西路123、125號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[雲林縣]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-122738),E:-1,N:-1",
+      "OutTraceInfo": "[雲林縣]\t { 模糊比對 } (西螺鎮)\t找到符合的[鄉鎮市區]，(光復西路)\t找到符合的[路街名]，(123125號)\t進行[單號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -122738 號，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "雲林縣西螺鎮漢光里15鄰光復西路387號",
+      "COUNTY": "雲林縣",
+      "TOWN": "西螺鎮",
+      "VILLAGE": "漢光里",
+      "NEIGHBORHOOD": "15鄰",
+      "ROAD": "光復西路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "387號",
+      "X": 120.452746,
+      "Y": 23.795890
+    }
+  ]
+}</string>

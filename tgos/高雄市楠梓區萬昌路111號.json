@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "高雄市楠梓區萬昌路111號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[高雄市]\tT:1,V:-1,R:2,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[高雄市]\t { 模糊比對 } (楠梓區)\t找到符合的[鄉鎮市區]，(萬昌路)\t找不到符合的[路街名]，進行轉換搜尋[街變成路，路變成街]，轉換搜尋找到符合的[路街名]，(111號)\t找到符合的[門牌號碼]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "高雄市楠梓區建昌里2鄰萬昌街111號",
+      "COUNTY": "高雄市",
+      "TOWN": "楠梓區",
+      "VILLAGE": "建昌里",
+      "NEIGHBORHOOD": "2鄰",
+      "ROAD": "萬昌街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "111號",
+      "X": 120.289538,
+      "Y": 22.711935
+    }
+  ]
+}</string>

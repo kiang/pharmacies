@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "苗栗縣苗栗市清華里褔星街60號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[苗栗縣]\tT:1,V:1,R:0,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[苗栗縣]\t { 模糊比對 } (苗栗市)\t找到符合的[鄉鎮市區]，(清華里)\t找到符合的[村里]，(褔星街)\t找不到符合的[路街名]，進行轉換搜尋[街變成路，路變成街]，進行轉換搜尋[路變成地區名]，轉換搜尋找不到符合的[路街名]，(60號)\t找到符合的[門牌號碼]，進行[雙號過濾]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "苗栗縣苗栗市清華里24鄰啟賢街60號",
+      "COUNTY": "苗栗縣",
+      "TOWN": "苗栗市",
+      "VILLAGE": "清華里",
+      "NEIGHBORHOOD": "24鄰",
+      "ROAD": "啟賢街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "60號",
+      "X": 120.827279,
+      "Y": 24.572826
+    },
+    {
+      "FULL_ADDR": "苗栗縣苗栗市清華里25鄰豐年路60號",
+      "COUNTY": "苗栗縣",
+      "TOWN": "苗栗市",
+      "VILLAGE": "清華里",
+      "NEIGHBORHOOD": "25鄰",
+      "ROAD": "豐年路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "60號",
+      "X": 120.828457,
+      "Y": 24.572983
+    },
+    {
+      "FULL_ADDR": "苗栗縣苗栗市清華里26鄰源林街60號",
+      "COUNTY": "苗栗縣",
+      "TOWN": "苗栗市",
+      "VILLAGE": "清華里",
+      "NEIGHBORHOOD": "26鄰",
+      "ROAD": "源林街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "60號",
+      "X": 120.826595,
+      "Y": 24.571252
+    },
+    {
+      "FULL_ADDR": "苗栗縣苗栗市清華里4鄰福星街60號",
+      "COUNTY": "苗栗縣",
+      "TOWN": "苗栗市",
+      "VILLAGE": "清華里",
+      "NEIGHBORHOOD": "4鄰",
+      "ROAD": "福星街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "60號",
+      "X": 120.825636,
+      "Y": 24.571651
+    }
+  ]
+}</string>

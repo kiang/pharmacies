@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺北市北投區光明路145號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺北市]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+4)(-2),E:-1,N:-1",
+      "OutTraceInfo": "[臺北市]\t { 模糊比對 } (北投區)\t找到符合的[鄉鎮市區]，(光明路)\t找到符合的[路街名]，(145號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +4 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -2 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺北市北投區長安里10鄰光明路143號",
+      "COUNTY": "臺北市",
+      "TOWN": "北投區",
+      "VILLAGE": "長安里",
+      "NEIGHBORHOOD": "10鄰",
+      "ROAD": "光明路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "143號",
+      "X": 121.502393,
+      "Y": 25.134871
+    },
+    {
+      "FULL_ADDR": "臺北市北投區長安里10鄰光明路149號",
+      "COUNTY": "臺北市",
+      "TOWN": "北投區",
+      "VILLAGE": "長安里",
+      "NEIGHBORHOOD": "10鄰",
+      "ROAD": "光明路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "149號",
+      "X": 121.502412,
+      "Y": 25.134964
+    }
+  ]
+}</string>

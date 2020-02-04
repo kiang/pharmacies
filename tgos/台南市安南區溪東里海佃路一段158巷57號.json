@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺南市安南區溪東里海佃路一段158巷57號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺南市]\tT:1,V:1,R:1,S:1,L:1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+155),E:-1,N:-1",
+      "OutTraceInfo": "[臺南市]\t { 模糊比對 } (安南區)\t找到符合的[鄉鎮市區]，(溪東里)\t找到符合的[村里]，(海佃路)\t找到符合的[路街名]，(1)\t找到符合的[路段]，(158巷)\t找到符合的[巷]，(57號)\t找不到符合的[門牌號碼]，進行轉換搜尋[巷視為號]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +155 號，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺南市安南區溪東里1鄰海佃路一段158巷212號",
+      "COUNTY": "臺南市",
+      "TOWN": "安南區",
+      "VILLAGE": "溪東里",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "海佃路",
+      "SECTION": "1",
+      "LANE": "158巷",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "212號",
+      "X": 120.198629,
+      "Y": 23.025272
+    }
+  ]
+}</string>

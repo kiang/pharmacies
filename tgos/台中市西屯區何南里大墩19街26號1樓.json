@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺中市西屯區何南里大墩19街26號1樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺中市]\tT:1,V:1,R:0,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[臺中市]\t { 模糊比對 } (西屯區)\t找到符合的[鄉鎮市區]，(何南里)\t找到符合的[村里]，(大墩19街)\t找不到符合的[路街名]，進行轉換搜尋[街變成路，路變成街]，進行轉換搜尋[路變成地區名]，轉換搜尋找不到符合的[路街名]，(26號)\t找到符合的[門牌號碼]，進行[雙號過濾]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺中市西屯區何南里1鄰精誠路26號",
+      "COUNTY": "臺中市",
+      "TOWN": "西屯區",
+      "VILLAGE": "何南里",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "精誠路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "26號",
+      "X": 120.656797,
+      "Y": 24.156926
+    },
+    {
+      "FULL_ADDR": "臺中市西屯區何南里2鄰精明一街26號",
+      "COUNTY": "臺中市",
+      "TOWN": "西屯區",
+      "VILLAGE": "何南里",
+      "NEIGHBORHOOD": "2鄰",
+      "ROAD": "精明一街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "26號",
+      "X": 120.656095,
+      "Y": 24.156972
+    },
+    {
+      "FULL_ADDR": "臺中市西屯區何南里3鄰大墩十九街26號",
+      "COUNTY": "臺中市",
+      "TOWN": "西屯區",
+      "VILLAGE": "何南里",
+      "NEIGHBORHOOD": "3鄰",
+      "ROAD": "大墩十九街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "26號",
+      "X": 120.655026,
+      "Y": 24.156817
+    },
+    {
+      "FULL_ADDR": "臺中市西屯區何南里4鄰精明二街26號",
+      "COUNTY": "臺中市",
+      "TOWN": "西屯區",
+      "VILLAGE": "何南里",
+      "NEIGHBORHOOD": "4鄰",
+      "ROAD": "精明二街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "26號",
+      "X": 120.655496,
+      "Y": 24.157173
+    }
+  ]
+}</string>

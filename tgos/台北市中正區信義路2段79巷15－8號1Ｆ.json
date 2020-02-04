@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺北市中正區信義路2段79巷15－8號1Ｆ",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺北市]\tT:1,V:-1,R:1,S:1,L:1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[臺北市]\t { 模糊比對 } (中正區)\t找到符合的[鄉鎮市區]，(信義路)\t找到符合的[路街名]，(2)\t找到符合的[路段]，(79巷)\t找到符合的[巷]，(15－8號)\t找到符合的[門牌號碼]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺北市中正區文祥里9鄰信義路二段79巷15之8號",
+      "COUNTY": "臺北市",
+      "TOWN": "中正區",
+      "VILLAGE": "文祥里",
+      "NEIGHBORHOOD": "9鄰",
+      "ROAD": "信義路",
+      "SECTION": "2",
+      "LANE": "79巷",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "15之8號",
+      "X": 121.526975,
+      "Y": 25.035454
+    }
+  ]
+}</string>

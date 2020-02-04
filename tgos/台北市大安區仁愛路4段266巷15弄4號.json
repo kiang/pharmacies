@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺北市大安區仁愛路4段266巷15弄4號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "完全比對",
+      "OutMatchCode": "[臺北市]\tFULL:1",
+      "OutTraceInfo": "[臺北市]\t { 完全比對 } 找到符合的門牌地址"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺北市大安區敦煌里16鄰仁愛路四段266巷15弄4號",
+      "COUNTY": "臺北市",
+      "TOWN": "大安區",
+      "VILLAGE": "敦煌里",
+      "NEIGHBORHOOD": "16鄰",
+      "ROAD": "仁愛路",
+      "SECTION": "4",
+      "LANE": "266巷",
+      "ALLEY": "15弄",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "4號",
+      "X": 121.553185,
+      "Y": 25.036554
+    }
+  ]
+}</string>

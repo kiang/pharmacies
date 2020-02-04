@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "桃園縣大溪鎮介壽路758號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[桃園市]\tT:0,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[桃園市]\t { 模糊比對 } (大溪鎮)\t找不到符合的[鄉鎮市區]，進行轉換搜尋[鄉變成鎮]，進行轉換搜尋[鎮變成市]，進行轉換搜尋[市變成區]，進行轉換搜尋[區變成市]，進行轉換搜尋[市變成鎮]，進行轉換搜尋[鎮變成鄉]，轉換搜尋找不到符合的[鄉鎮市區]，(介壽路)\t找到符合的[路街名]，(758號)\t找到符合的[門牌號碼]，進行[雙號過濾]，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "桃園市八德區瑞泰里12鄰介壽路二段758號",
+      "COUNTY": "桃園市",
+      "TOWN": "八德區",
+      "VILLAGE": "瑞泰里",
+      "NEIGHBORHOOD": "12鄰",
+      "ROAD": "介壽路",
+      "SECTION": "2",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "758號",
+      "X": 121.297245,
+      "Y": 24.937368
+    },
+    {
+      "FULL_ADDR": "桃園市大溪區仁武里1鄰介壽路758號",
+      "COUNTY": "桃園市",
+      "TOWN": "大溪區",
+      "VILLAGE": "仁武里",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "介壽路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "758號",
+      "X": 121.284336,
+      "Y": 24.903985
+    }
+  ]
+}</string>

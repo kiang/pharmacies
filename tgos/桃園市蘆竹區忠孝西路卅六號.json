@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "桃園市蘆竹區忠孝西路卅六號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[桃園市]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:0,NO:0,E:-1,N:-1",
+      "OutTraceInfo": "[桃園市]\t { 模糊比對 } (蘆竹區)\t找到符合的[鄉鎮市區]，(忠孝西路)\t找到符合的[路街名]，(卅)\t找不到符合的[地區]，進行轉換搜尋[路或街變成地區名]，轉換搜尋找不到符合的[地區]，(六號)\t進行[找最小門牌的號之、之號]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "桃園市蘆竹區南榮里11鄰忠孝西路24之1號",
+      "COUNTY": "桃園市",
+      "TOWN": "蘆竹區",
+      "VILLAGE": "南榮里",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "忠孝西路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "24之1號",
+      "X": 121.292437,
+      "Y": 25.044250
+    },
+    {
+      "FULL_ADDR": "桃園市蘆竹區南榮里11鄰忠孝西路58之1號",
+      "COUNTY": "桃園市",
+      "TOWN": "蘆竹區",
+      "VILLAGE": "南榮里",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "忠孝西路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "58之1號",
+      "X": 121.291418,
+      "Y": 25.043502
+    },
+    {
+      "FULL_ADDR": "桃園市蘆竹區南榮里11鄰忠孝西路58之2號",
+      "COUNTY": "桃園市",
+      "TOWN": "蘆竹區",
+      "VILLAGE": "南榮里",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "忠孝西路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "58之2號",
+      "X": 121.291362,
+      "Y": 25.043419
+    },
+    {
+      "FULL_ADDR": "桃園市蘆竹區南興里12鄰忠孝西路60之1號",
+      "COUNTY": "桃園市",
+      "TOWN": "蘆竹區",
+      "VILLAGE": "南興里",
+      "NEIGHBORHOOD": "12鄰",
+      "ROAD": "忠孝西路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "60之1號",
+      "X": 121.290556,
+      "Y": 25.042269
+    }
+  ]
+}</string>
