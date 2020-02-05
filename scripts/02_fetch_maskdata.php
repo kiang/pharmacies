@@ -31,7 +31,7 @@ $fc = array(
     'features' => array(),
 );
 while($line = fgetcsv($fh2, 2048)) {
-    if(isset($ref[$line[0]])) {
+    if(isset($ref[$line[0]]) && !empty($ref[$line[0]]['TGOS X'])) {
         $f = array(
             'type' => 'Feature',
             'properties' => array(
