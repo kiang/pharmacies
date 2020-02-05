@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "彰化縣二林鎮豐田里斗苑路四段689號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[彰化縣]\tT:1,V:1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+34)(-16),E:-1,N:-1",
+      "OutTraceInfo": "[彰化縣]\t { 模糊比對 } (二林鎮)\t找到符合的[鄉鎮市區]，(豐田里)\t找到符合的[村里]，(斗苑路)\t找到符合的[路街名]，(4)\t找到符合的[路段]，(689號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +34 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -16 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "彰化縣二林鎮豐田里12鄰斗苑路四段673號",
+      "COUNTY": "彰化縣",
+      "TOWN": "二林鎮",
+      "VILLAGE": "豐田里",
+      "NEIGHBORHOOD": "12鄰",
+      "ROAD": "斗苑路",
+      "SECTION": "4",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "673號",
+      "X": 120.373118,
+      "Y": 23.899430
+    },
+    {
+      "FULL_ADDR": "彰化縣二林鎮豐田里12鄰斗苑路四段723號",
+      "COUNTY": "彰化縣",
+      "TOWN": "二林鎮",
+      "VILLAGE": "豐田里",
+      "NEIGHBORHOOD": "12鄰",
+      "ROAD": "斗苑路",
+      "SECTION": "4",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "723號",
+      "X": 120.372215,
+      "Y": 23.899520
+    }
+  ]
+}</string>

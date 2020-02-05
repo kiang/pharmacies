@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "屏東縣獅子鄉楓林村楓林二巷31號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[屏東縣]\tT:1,V:1,R:-1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:1,NO:0(+12)(-2),E:-1,N:-1",
+      "OutTraceInfo": "[屏東縣]\t { 模糊比對 } (獅子鄉)\t找到符合的[鄉鎮市區]，(楓林村)\t找到符合的[村里]，(楓林二巷)\t找到符合的[地區]，(31號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +12 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -2 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "屏東縣獅子鄉楓林村8鄰楓林二巷29號",
+      "COUNTY": "屏東縣",
+      "TOWN": "獅子鄉",
+      "VILLAGE": "楓林村",
+      "NEIGHBORHOOD": "8鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "29號",
+      "X": 120.704805,
+      "Y": 22.202042
+    },
+    {
+      "FULL_ADDR": "屏東縣獅子鄉楓林村8鄰楓林二巷43號",
+      "COUNTY": "屏東縣",
+      "TOWN": "獅子鄉",
+      "VILLAGE": "楓林村",
+      "NEIGHBORHOOD": "8鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "43號",
+      "X": 120.705140,
+      "Y": 22.204692
+    }
+  ]
+}</string>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "金門縣金寧鄉盤山村仁愛新屯2之1號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[金門縣]\tT:1,V:1,R:-1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:0,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[金門縣]\t { 模糊比對 } (金寧鄉)\t找到符合的[鄉鎮市區]，(盤山村)\t找到符合的[村里]，(仁愛新屯)\t找不到符合的[地區]，轉換搜尋找不到符合的[地區]，(2之1號)\t找到符合的[門牌號碼]，進行[雙號過濾]，進行[找最小門牌的號之、之號]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "金門縣金寧鄉盤山村16鄰下堡2之1號",
+      "COUNTY": "金門縣",
+      "TOWN": "金寧鄉",
+      "VILLAGE": "盤山村",
+      "NEIGHBORHOOD": "16鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2之1號",
+      "X": 118.337384,
+      "Y": 24.444791
+    },
+    {
+      "FULL_ADDR": "金門縣金寧鄉盤山村17鄰前厝2之1號",
+      "COUNTY": "金門縣",
+      "TOWN": "金寧鄉",
+      "VILLAGE": "盤山村",
+      "NEIGHBORHOOD": "17鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2之1號",
+      "X": 118.336483,
+      "Y": 24.444332
+    },
+    {
+      "FULL_ADDR": "金門縣金寧鄉盤山村18鄰仁愛新邨2之1號",
+      "COUNTY": "金門縣",
+      "TOWN": "金寧鄉",
+      "VILLAGE": "盤山村",
+      "NEIGHBORHOOD": "18鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2之1號",
+      "X": 118.335091,
+      "Y": 24.451179
+    },
+    {
+      "FULL_ADDR": "金門縣金寧鄉盤山村5鄰頂堡2之1號",
+      "COUNTY": "金門縣",
+      "TOWN": "金寧鄉",
+      "VILLAGE": "盤山村",
+      "NEIGHBORHOOD": "5鄰",
+      "ROAD": "",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2之1號",
+      "X": 118.340348,
+      "Y": 24.447221
+    }
+  ]
+}</string>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "屏東縣高樹鄉長榮村南昌路12–2號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[屏東縣]\tT:1,V:1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:0,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[屏東縣]\t { 模糊比對 } (高樹鄉)\t找到符合的[鄉鎮市區]，(長榮村)\t找到符合的[村里]，(南昌路)\t找到符合的[路街名]，(一二–)\t找不到符合的[地區]，進行轉換搜尋[路或街變成地區名]，轉換搜尋找不到符合的[地區]，(2號)\t找到符合的[門牌號碼]，進行[雙號過濾]，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "屏東縣高樹鄉長榮村7鄰南昌路2號",
+      "COUNTY": "屏東縣",
+      "TOWN": "高樹鄉",
+      "VILLAGE": "長榮村",
+      "NEIGHBORHOOD": "7鄰",
+      "ROAD": "南昌路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2號",
+      "X": 120.596287,
+      "Y": 22.819426
+    },
+    {
+      "FULL_ADDR": "屏東縣高樹鄉長榮村8鄰南昌路2號",
+      "COUNTY": "屏東縣",
+      "TOWN": "高樹鄉",
+      "VILLAGE": "長榮村",
+      "NEIGHBORHOOD": "8鄰",
+      "ROAD": "南昌路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2號",
+      "X": 120.596287,
+      "Y": 22.819426
+    }
+  ]
+}</string>

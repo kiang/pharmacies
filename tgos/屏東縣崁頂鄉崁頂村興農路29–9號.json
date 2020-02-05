@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "屏東縣崁頂鄉崁頂村興農路29–9號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "3",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[屏東縣]\tT:1,V:1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:0,NO:0(+8)(-8),E:-1,N:-1",
+      "OutTraceInfo": "[屏東縣]\t { 模糊比對 } (崁頂鄉)\t找到符合的[鄉鎮市區]，(崁頂村)\t找到符合的[村里]，(興農路)\t找到符合的[路街名]，(二九–)\t找不到符合的[地區]，進行轉換搜尋[路或街變成地區名]，轉換搜尋找不到符合的[地區]，(9號)\t進行[單號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +8 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -8 號，進行[找最小門牌的號之、之號]，模糊比對找到 3 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "屏東縣崁頂鄉崁頂村11鄰興農路1之2號",
+      "COUNTY": "屏東縣",
+      "TOWN": "崁頂鄉",
+      "VILLAGE": "崁頂村",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "興農路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "1之2號",
+      "X": 120.506500,
+      "Y": 22.511899
+    },
+    {
+      "FULL_ADDR": "屏東縣崁頂鄉崁頂村11鄰興農路1之16號",
+      "COUNTY": "屏東縣",
+      "TOWN": "崁頂鄉",
+      "VILLAGE": "崁頂村",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "興農路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "1之16號",
+      "X": 120.507389,
+      "Y": 22.512127
+    },
+    {
+      "FULL_ADDR": "屏東縣崁頂鄉崁頂村12鄰興農路17之1號",
+      "COUNTY": "屏東縣",
+      "TOWN": "崁頂鄉",
+      "VILLAGE": "崁頂村",
+      "NEIGHBORHOOD": "12鄰",
+      "ROAD": "興農路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "17之1號",
+      "X": 120.508275,
+      "Y": 22.513030
+    }
+  ]
+}</string>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "彰化縣芬園鄉社口村公園1街11號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "4",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[彰化縣]\tT:1,V:1,R:0,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[彰化縣]\t { 模糊比對 } (芬園鄉)\t找到符合的[鄉鎮市區]，(社口村)\t找到符合的[村里]，(公園1街)\t找不到符合的[路街名]，進行轉換搜尋[街變成路，路變成街]，進行轉換搜尋[路變成地區名]，轉換搜尋找不到符合的[路街名]，(11號)\t找到符合的[門牌號碼]，進行[單號過濾]，模糊比對找到 4 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "彰化縣芬園鄉社口村11鄰中正街11號",
+      "COUNTY": "彰化縣",
+      "TOWN": "芬園鄉",
+      "VILLAGE": "社口村",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "中正街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "11號",
+      "X": 120.628087,
+      "Y": 24.012784
+    },
+    {
+      "FULL_ADDR": "彰化縣芬園鄉社口村11鄰忠孝路11號",
+      "COUNTY": "彰化縣",
+      "TOWN": "芬園鄉",
+      "VILLAGE": "社口村",
+      "NEIGHBORHOOD": "11鄰",
+      "ROAD": "忠孝路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "11號",
+      "X": 120.628060,
+      "Y": 24.012871
+    },
+    {
+      "FULL_ADDR": "彰化縣芬園鄉社口村1鄰成功路11號",
+      "COUNTY": "彰化縣",
+      "TOWN": "芬園鄉",
+      "VILLAGE": "社口村",
+      "NEIGHBORHOOD": "1鄰",
+      "ROAD": "成功路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "11號",
+      "X": 120.628873,
+      "Y": 24.012220
+    },
+    {
+      "FULL_ADDR": "彰化縣芬園鄉社口村27鄰公園一街11號",
+      "COUNTY": "彰化縣",
+      "TOWN": "芬園鄉",
+      "VILLAGE": "社口村",
+      "NEIGHBORHOOD": "27鄰",
+      "ROAD": "公園一街",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "11號",
+      "X": 120.630533,
+      "Y": 24.014091
+    }
+  ]
+}</string>

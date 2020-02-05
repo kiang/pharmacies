@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺南市新營區大宏里三民路72號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "3",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺南市]\tT:1,V:1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[臺南市]\t { 模糊比對 } (新營區)\t找到符合的[鄉鎮市區]，(大宏里)\t找到符合的[村里]，(三民路)\t找到符合的[路街名]，(72號)\t找到符合的[門牌號碼]，進行[雙號過濾]，進行[找最小門牌的號之、之號]，模糊比對找到 3 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺南市新營區大宏里5鄰三民路72之2號",
+      "COUNTY": "臺南市",
+      "TOWN": "新營區",
+      "VILLAGE": "大宏里",
+      "NEIGHBORHOOD": "5鄰",
+      "ROAD": "三民路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "72之2號",
+      "X": 120.317156,
+      "Y": 23.307417
+    },
+    {
+      "FULL_ADDR": "臺南市新營區大宏里5鄰三民路72之3號",
+      "COUNTY": "臺南市",
+      "TOWN": "新營區",
+      "VILLAGE": "大宏里",
+      "NEIGHBORHOOD": "5鄰",
+      "ROAD": "三民路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "72之3號",
+      "X": 120.317089,
+      "Y": 23.307413
+    },
+    {
+      "FULL_ADDR": "臺南市新營區大宏里5鄰三民路72之5號",
+      "COUNTY": "臺南市",
+      "TOWN": "新營區",
+      "VILLAGE": "大宏里",
+      "NEIGHBORHOOD": "5鄰",
+      "ROAD": "三民路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "72之5號",
+      "X": 120.317033,
+      "Y": 23.307407
+    }
+  ]
+}</string>

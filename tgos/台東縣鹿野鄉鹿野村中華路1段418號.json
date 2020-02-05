@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺東縣鹿野鄉鹿野村中華路1段418號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺東縣]\tT:1,V:1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(+2)(-10),E:-1,N:-1",
+      "OutTraceInfo": "[臺東縣]\t { 模糊比對 } (鹿野鄉)\t找到符合的[鄉鎮市區]，(鹿野村)\t找到符合的[村里]，(中華路)\t找到符合的[路街名]，(1)\t找到符合的[路段]，(418號)\t進行[雙號過濾]，進行[找大於且最接近的門牌號碼]，找到大於輸入的門牌號碼 +2 號，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -10 號，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺東縣鹿野鄉鹿野村6鄰中華路一段408號",
+      "COUNTY": "臺東縣",
+      "TOWN": "鹿野鄉",
+      "VILLAGE": "鹿野村",
+      "NEIGHBORHOOD": "6鄰",
+      "ROAD": "中華路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "408號",
+      "X": 121.136330,
+      "Y": 22.909886
+    },
+    {
+      "FULL_ADDR": "臺東縣鹿野鄉鹿野村6鄰中華路一段420號",
+      "COUNTY": "臺東縣",
+      "TOWN": "鹿野鄉",
+      "VILLAGE": "鹿野村",
+      "NEIGHBORHOOD": "6鄰",
+      "ROAD": "中華路",
+      "SECTION": "1",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "420號",
+      "X": 121.136553,
+      "Y": 22.910258
+    }
+  ]
+}</string>
