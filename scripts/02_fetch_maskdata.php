@@ -35,6 +35,7 @@ while($line = fgetcsv($fh2, 2048)) {
         $f = array(
             'type' => 'Feature',
             'properties' => array(
+                'id' => $line[0],
                 'name' => $ref[$line[0]]['醫事機構名稱'],
                 'phone' => $ref[$line[0]]['電話'],
                 'address' => $ref[$line[0]]['地 址 '],
