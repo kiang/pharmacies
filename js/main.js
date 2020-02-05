@@ -80,7 +80,7 @@ map.on('singleclick', function(evt) {
       var message = '<table class="table table-dark">';
       message += '<tbody>';
       var p = feature.getProperties();
-      message += '<tr><th scope="row" style="width: 100px;">名稱</th><td>' + p.name + '</td></tr>';
+      message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
       message += '<tr><th scope="row">成人口罩庫存</th><td>' + p.mask_adult + '</td></tr>';
       message += '<tr><th scope="row">兒童口罩庫存</th><td>' + p.mask_child + '</td></tr>';
       message += '<tr><th scope="row">電話</th><td>' + p.phone + '</td></tr>';
