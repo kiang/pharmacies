@@ -61,6 +61,15 @@ foreach($fc['features'] AS $k => $f) {
         $fc['features'][$k]['properties']['mask_adult'] = $maskData[$f['properties']['id']][4];
         $fc['features'][$k]['properties']['mask_child'] = $maskData[$f['properties']['id']][5];
         $fc['features'][$k]['properties']['updated'] = $maskData[$f['properties']['id']][6];
+        unset($maskData[$f['properties']['id']]);
     }
 }
 file_put_contents(dirname(__DIR__) . '/json/points.json', json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE));
+
+if(!empty($maskData)) {
+    $errorFh = fopen(dirname(__DIR__) . '/error.csv', 'w');
+    foreach($maskData AS $line) {
+        fputcsv($errorFh, $line);
+    }
+    fclose($errorFh);
+}
