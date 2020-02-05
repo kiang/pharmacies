@@ -4,11 +4,37 @@ $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
 file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
 
 $fh1 = fopen(dirname(__DIR__) . '/data.csv', 'r');
-$ref = array();
+$fc = array(
+    'type' => 'FeatureCollection',
+    'features' => array(),
+);
 $head = fgetcsv($fh1, 2048);
 while($line = fgetcsv($fh1, 2048)) {
     $data = array_combine($head, $line);
-    $ref[$line[0]] = $data;
+    if(!empty($data['TGOS X'])) {
+        $f = array(
+            'type' => 'Feature',
+            'properties' => array(
+                'id' => $line[0],
+                'name' => $data['醫事機構名稱'],
+                'phone' => $data['電話'],
+                'address' => $data['地 址 '],
+                'mask_adult' => 0,
+                'mask_child' => 0,
+                'updated' => '',
+                'available' => $data['固定看診時段 '],
+                'note' => $data['備註'],
+            ),
+            'geometry' => array(
+                'type' => 'Point',
+                'coordinates' => array(
+                    $data['TGOS X'],
+                    $data['TGOS Y'],
+                ),
+            ),
+        );
+        $fc['features'][] = $f;
+    }
 }
 fclose($fh1);
 
@@ -26,34 +52,15 @@ Array
 )
 */
 $head = fgetcsv($fh2, 2048);
-$fc = array(
-    'type' => 'FeatureCollection',
-    'features' => array(),
-);
+$maskData = array();
 while($line = fgetcsv($fh2, 2048)) {
-    if(isset($ref[$line[0]]) && !empty($ref[$line[0]]['TGOS X'])) {
-        $f = array(
-            'type' => 'Feature',
-            'properties' => array(
-                'id' => $line[0],
-                'name' => $ref[$line[0]]['醫事機構名稱'],
-                'phone' => $ref[$line[0]]['電話'],
-                'address' => $ref[$line[0]]['地 址 '],
-                'mask_adult' => $line[4],
-                'mask_child' => $line[5],
-                'updated' => $line[6],
-                'available' => $ref[$line[0]]['固定看診時段 '],
-                'note' => $ref[$line[0]]['備註'],
-            ),
-            'geometry' => array(
-                'type' => 'Point',
-                'coordinates' => array(
-                    $ref[$line[0]]['TGOS X'],
-                    $ref[$line[0]]['TGOS Y'],
-                ),
-            ),
-        );
-        $fc['features'][] = $f;
+    $maskData[$line[0]] = $line;
+}
+foreach($fc['features'] AS $k => $f) {
+    if(isset($maskData[$f['properties']['id']])) {
+        $fc['features'][$k]['properties']['mask_adult'] = $maskData[$f['properties']['id']][4];
+        $fc['features'][$k]['properties']['mask_child'] = $maskData[$f['properties']['id']][5];
+        $fc['features'][$k]['properties']['updated'] = $maskData[$f['properties']['id']][6];
     }
 }
 file_put_contents(dirname(__DIR__) . '/json/points.json', json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE));
