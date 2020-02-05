@@ -123,9 +123,14 @@ positionFeature.setStyle(new ol.style.Style({
   })
 }));
 
+var firstPosDone = false;
 geolocation.on('change:position', function() {
   var coordinates = geolocation.getPosition();
   positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+  if(false === firstPosDone) {
+    appView.setCenter(coordinates);
+    firstPosDone = true;
+  }
 });
 
 new ol.layer.Vector({
@@ -136,6 +141,9 @@ new ol.layer.Vector({
 });
 
 $('#btn-geolocation').click(function () {
-  appView.setCenter(geolocation.getPosition());
+  var coordinates = geolocation.getPosition();
+  if(coordinates) {
+    appView.setCenter(coordinates);
+  }
   return false;
 });
