@@ -83,6 +83,12 @@ map.on('singleclick', function(evt) {
       message += '<tbody>';
       var p = feature.getProperties();
       message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
+      if(p.custom_note != '') {
+        message += '<tr><th scope="row">口罩銷售提醒</th><td>' + p.custom_note + '</td></tr>';
+      }
+      if(p.website != '') {
+        message += '<tr><th scope="row">網站</th><td><a href="' + p.website + '" target="_blank">網站</a></td></tr>';
+      }
       if(p.updated === '') {
         message += '<tr><th scope="row">成人口罩庫存</th><td>無資料</td></tr>';
         message += '<tr><th scope="row">兒童口罩庫存</th><td>無資料</td></tr>';
