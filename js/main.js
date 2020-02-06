@@ -83,8 +83,13 @@ map.on('singleclick', function(evt) {
       message += '<tbody>';
       var p = feature.getProperties();
       message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
-      message += '<tr><th scope="row">成人口罩庫存</th><td>' + p.mask_adult + '</td></tr>';
-      message += '<tr><th scope="row">兒童口罩庫存</th><td>' + p.mask_child + '</td></tr>';
+      if(p.updated === '') {
+        message += '<tr><th scope="row">成人口罩庫存</th><td>無資料</td></tr>';
+        message += '<tr><th scope="row">兒童口罩庫存</th><td>無資料</td></tr>';
+      } else {
+        message += '<tr><th scope="row">成人口罩庫存</th><td>' + p.mask_adult + '</td></tr>';
+        message += '<tr><th scope="row">兒童口罩庫存</th><td>' + p.mask_child + '</td></tr>';
+      }
       message += '<tr><th scope="row">電話</th><td>' + p.phone + '</td></tr>';
       message += '<tr><th scope="row">住址</th><td>' + p.address + '</td></tr>';
       message += '<tr><th scope="row">營業日</th><td>' + p.available + '</td></tr>';
