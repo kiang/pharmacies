@@ -40,8 +40,6 @@ while($line = fgetcsv($fh1, 2048)) {
                 'updated' => '',
                 'available' => $data['固定看診時段 '],
                 'note' => $data['備註'],
-                'mark_adult' => 0,
-                'mark_child' => 0,
                 'custom_note' => isset($notices[$line[0]]) ? $notices[$line[0]][2] : '', //藥局自行提供的備註訊息
                 'website' => isset($notices[$line[0]]) ? $notices[$line[0]][3] : '', //藥局自行提供的網址
             ),
@@ -76,52 +74,19 @@ $maskData = array();
 while($line = fgetcsv($fh2, 2048)) {
     $maskData[$line[0]] = $line;
 }
-$markDeliveredFile = dirname(__DIR__) . '/mark_delivered.json';
-$mark_delivered = array();
-if(file_exists($markDeliveredFile)) {
-    $mark_delivered = json_decode(file_get_contents($markDeliveredFile), true);
-}
-$today = date('Y-m-d');
 foreach($fc['features'] AS $k => $f) {
     if(isset($maskData[$f['properties']['id']])) {
         $total = $maskData[$f['properties']['id']][4] + $maskData[$f['properties']['id']][5];
         $fc['features'][$k]['properties']['mask_adult'] = $maskData[$f['properties']['id']][4];
         $fc['features'][$k]['properties']['mask_child'] = $maskData[$f['properties']['id']][5];
         $fc['features'][$k]['properties']['updated'] = $maskData[$f['properties']['id']][6];
-        if(!isset($mark_delivered[$f['properties']['id']])) {
-            $mark_delivered[$f['properties']['id']] = array();
-        }
-        if(!empty($maskData[$f['properties']['id']][4])) {
-            $mark_delivered[$f['properties']['id']]['adult'] = $today;
-            $fc['features'][$k]['properties']['mark_adult'] = 1;
-        } else {
-            if(isset($mark_delivered[$f['properties']['id']]['adult']) && $mark_delivered[$f['properties']['id']]['adult'] === $today) {
-                $fc['features'][$k]['properties']['mark_adult'] = 1;
-            } else {
-                if(isset($mark_delivered[$f['properties']['id']]['adult'])) {
-                    unset($mark_delivered[$f['properties']['id']]['adult']);
-                }
-                $fc['features'][$k]['properties']['mark_adult'] = 0;
-            }
-        }
-        if(!empty($maskData[$f['properties']['id']][5])) {
-            $mark_delivered[$f['properties']['id']]['child'] = $today;
-            $fc['features'][$k]['properties']['mark_child'] = 1;
-        } else {
-            if(isset($mark_delivered[$f['properties']['id']]['child']) && $mark_delivered[$f['properties']['id']]['child'] === $today) {
-                $fc['features'][$k]['properties']['mark_child'] = 1;
-            } else {
-                if(isset($mark_delivered[$f['properties']['id']]['child'])) {
-                    unset($mark_delivered[$f['properties']['id']]['child']);
-                }
-                $fc['features'][$k]['properties']['mark_child'] = 0;
-            }
-        }
         unset($maskData[$f['properties']['id']]);
     }
+    $fc['features'][$k]['properties']['id'] = 'id_' . $fc['features'][$k]['properties']['id'];
 }
-file_put_contents(dirname(__DIR__) . '/json/points.json', json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE));
-file_put_contents($markDeliveredFile, json_encode($mark_delivered));
+$jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
+$jsonString = str_replace('"id": "id_', '"id": "', $jsonString);
+file_put_contents(dirname(__DIR__) . '/json/points.json', $jsonString);
 
 if(!empty($maskData)) {
     $errorFh = fopen(dirname(__DIR__) . '/error.csv', 'w');
