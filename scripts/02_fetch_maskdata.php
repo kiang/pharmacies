@@ -3,6 +3,22 @@
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
 file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
 
+$cFh = fopen(dirname(__DIR__) . '/raw/custom_notices.csv', 'r');
+$head = fgetcsv($cFh, 2048);
+/*
+Array
+(
+    [0] => Timestamp
+    [1] => 醫事機構代碼
+    [2] => 備註文字
+    [3] => 藥局網址
+)
+*/
+$notices = array();
+while($line = fgetcsv($cFh, 2048)) {
+    $notices[$line[1]] = $line;
+}
+
 $fh1 = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $fc = array(
     'type' => 'FeatureCollection',
@@ -26,6 +42,8 @@ while($line = fgetcsv($fh1, 2048)) {
                 'note' => $data['備註'],
                 'mark_adult' => 0,
                 'mark_child' => 0,
+                'custom_note' => isset($notices[$line[0]]) ? $notices[$line[0]][2] : '', //藥局自行提供的備註訊息
+                'website' => isset($notices[$line[0]]) ? $notices[$line[0]][3] : '', //藥局自行提供的網址
             ),
             'geometry' => array(
                 'type' => 'Point',
