@@ -16,6 +16,8 @@ function pointStyleFunction(f, r) {
   var p = f.getProperties(), color = '#ff0';
   if(p.mask_adult > 0 && p.mask_child > 0) {
     color = '#0f0';
+  } else if(p.updated === '') {
+    color = '#ccc';
   } else if(p.mask_adult == 0 && p.mask_child == 0) {
     color = '#f00';
   }
