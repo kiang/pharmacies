@@ -64,7 +64,7 @@ var baseLayer = new ol.layer.Tile({
         wrapX: true,
         attributions: '<a href="http://maps.nlsc.gov.tw/" target="_blank">國土測繪圖資服務雲</a>'
     }),
-    opacity: 0.3
+    opacity: 0.8
 });
 
 var map = new ol.Map({
