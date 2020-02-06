@@ -31,7 +31,7 @@ while($line = fgetcsv($fh1, 2048)) {
         $f = array(
             'type' => 'Feature',
             'properties' => array(
-                'id' => 'id_' . $line[0],
+                'id' => $line[0],
                 'name' => $data['醫事機構名稱'],
                 'phone' => $data['電話'],
                 'address' => $data['地 址 '],
@@ -120,9 +120,7 @@ foreach($fc['features'] AS $k => $f) {
         unset($maskData[$f['properties']['id']]);
     }
 }
-$jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
-$jsonString = str_replace('"id": "id_', '"id": "', $jsonString);
-file_put_contents(dirname(__DIR__) . '/json/points.json', $jsonString);
+file_put_contents(dirname(__DIR__) . '/json/points.json', json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE));
 file_put_contents($markDeliveredFile, json_encode($mark_delivered));
 
 if(!empty($maskData)) {
