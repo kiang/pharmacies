@@ -18,6 +18,8 @@ function pointStyleFunction(f, r) {
     color = '#0f0';
   } else if(p.updated === '') {
     color = '#ccc';
+  } else if(p.mark_delivered == 0) {
+    color = '#000';
   } else if(p.mask_adult == 0 && p.mask_child == 0) {
     color = '#f00';
   }
