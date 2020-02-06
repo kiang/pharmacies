@@ -24,6 +24,7 @@ while($line = fgetcsv($fh1, 2048)) {
                 'updated' => '',
                 'available' => $data['固定看診時段 '],
                 'note' => $data['備註'],
+                'mark_delivered' => '0',
             ),
             'geometry' => array(
                 'type' => 'Point',
@@ -56,15 +57,38 @@ $maskData = array();
 while($line = fgetcsv($fh2, 2048)) {
     $maskData[$line[0]] = $line;
 }
+$markDeliveredFile = dirname(__DIR__) . '/mark_delivered.json';
+$mark_delivered = array();
+if(file_exists($markDeliveredFile)) {
+    $mark_delivered = json_decode(file_get_contents($markDeliveredFile), true);
+}
+$today = date('Y-m-d');
 foreach($fc['features'] AS $k => $f) {
     if(isset($maskData[$f['properties']['id']])) {
+        $total = $maskData[$f['properties']['id']][4] + $maskData[$f['properties']['id']][5];
         $fc['features'][$k]['properties']['mask_adult'] = $maskData[$f['properties']['id']][4];
         $fc['features'][$k]['properties']['mask_child'] = $maskData[$f['properties']['id']][5];
         $fc['features'][$k]['properties']['updated'] = $maskData[$f['properties']['id']][6];
+        if($total == 0) {
+            if(isset($mark_delivered[$f['properties']['id']]) && $mark_delivered[$f['properties']['id']] === $today) {
+                //今天有進貨，但是沒有庫存，表示賣完，所以一樣標記有進貨
+                $fc['features'][$k]['properties']['mark_delivered'] = 1;
+            } else {
+                //今天庫存都是零，表示沒有進貨
+                if(isset($mark_delivered[$f['properties']['id']])) {
+                    unset($mark_delivered[$f['properties']['id']]);
+                }
+                $fc['features'][$k]['properties']['mark_delivered'] = 0;
+            }
+        } else {
+            $mark_delivered[$f['properties']['id']] = $today;
+            $fc['features'][$k]['properties']['mark_delivered'] = 1;
+        }
         unset($maskData[$f['properties']['id']]);
     }
 }
 file_put_contents(dirname(__DIR__) . '/json/points.json', json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE));
+file_put_contents($markDeliveredFile, json_encode($mark_delivered));
 
 if(!empty($maskData)) {
     $errorFh = fopen(dirname(__DIR__) . '/error.csv', 'w');
