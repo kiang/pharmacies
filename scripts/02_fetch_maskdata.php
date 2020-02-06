@@ -24,7 +24,8 @@ while($line = fgetcsv($fh1, 2048)) {
                 'updated' => '',
                 'available' => $data['固定看診時段 '],
                 'note' => $data['備註'],
-                'mark_delivered' => '0',
+                'mark_adult' => 0,
+                'mark_child' => 0,
             ),
             'geometry' => array(
                 'type' => 'Point',
@@ -69,20 +70,34 @@ foreach($fc['features'] AS $k => $f) {
         $fc['features'][$k]['properties']['mask_adult'] = $maskData[$f['properties']['id']][4];
         $fc['features'][$k]['properties']['mask_child'] = $maskData[$f['properties']['id']][5];
         $fc['features'][$k]['properties']['updated'] = $maskData[$f['properties']['id']][6];
-        if($total == 0) {
-            if(isset($mark_delivered[$f['properties']['id']]) && $mark_delivered[$f['properties']['id']] === $today) {
-                //今天有進貨，但是沒有庫存，表示賣完，所以一樣標記有進貨
-                $fc['features'][$k]['properties']['mark_delivered'] = 1;
-            } else {
-                //今天庫存都是零，表示沒有進貨
-                if(isset($mark_delivered[$f['properties']['id']])) {
-                    unset($mark_delivered[$f['properties']['id']]);
-                }
-                $fc['features'][$k]['properties']['mark_delivered'] = 0;
-            }
+        if(!isset($mark_delivered[$f['properties']['id']])) {
+            $mark_delivered[$f['properties']['id']] = array();
+        }
+        if(!empty($maskData[$f['properties']['id']][4])) {
+            $mark_delivered[$f['properties']['id']]['adult'] = $today;
+            $fc['features'][$k]['properties']['mark_adult'] = 1;
         } else {
-            $mark_delivered[$f['properties']['id']] = $today;
-            $fc['features'][$k]['properties']['mark_delivered'] = 1;
+            if(isset($mark_delivered[$f['properties']['id']]['adult']) && $mark_delivered[$f['properties']['id']]['adult'] === $today) {
+                $fc['features'][$k]['properties']['mark_adult'] = 1;
+            } else {
+                if(isset($mark_delivered[$f['properties']['id']]['adult'])) {
+                    unset($mark_delivered[$f['properties']['id']]['adult']);
+                }
+                $fc['features'][$k]['properties']['mark_adult'] = 0;
+            }
+        }
+        if(!empty($maskData[$f['properties']['id']][5])) {
+            $mark_delivered[$f['properties']['id']]['child'] = $today;
+            $fc['features'][$k]['properties']['mark_child'] = 1;
+        } else {
+            if(isset($mark_delivered[$f['properties']['id']]['child']) && $mark_delivered[$f['properties']['id']]['child'] === $today) {
+                $fc['features'][$k]['properties']['mark_child'] = 1;
+            } else {
+                if(isset($mark_delivered[$f['properties']['id']]['child'])) {
+                    unset($mark_delivered[$f['properties']['id']]['child']);
+                }
+                $fc['features'][$k]['properties']['mark_child'] = 0;
+            }
         }
         unset($maskData[$f['properties']['id']]);
     }

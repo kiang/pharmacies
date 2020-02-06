@@ -18,8 +18,6 @@ function pointStyleFunction(f, r) {
     color = '#0f0';
   } else if(p.updated === '') {
     color = '#ccc';
-  } else if(p.mark_delivered == 0) {
-    color = '#000';
   } else if(p.mask_adult == 0 && p.mask_child == 0) {
     color = '#f00';
   }
@@ -89,8 +87,16 @@ map.on('singleclick', function(evt) {
         message += '<tr><th scope="row">成人口罩庫存</th><td>無資料</td></tr>';
         message += '<tr><th scope="row">兒童口罩庫存</th><td>無資料</td></tr>';
       } else {
-        message += '<tr><th scope="row">成人口罩庫存</th><td>' + p.mask_adult + '</td></tr>';
-        message += '<tr><th scope="row">兒童口罩庫存</th><td>' + p.mask_child + '</td></tr>';
+        if(p.mark_adult != 0) {
+          message += '<tr><th scope="row">成人口罩庫存</th><td>' + p.mask_adult + '</td></tr>';
+        } else {
+          message += '<tr><th scope="row">成人口罩庫存</th><td>未進貨</td></tr>';
+        }
+        if(p.mark_child != 0) {
+          message += '<tr><th scope="row">兒童口罩庫存</th><td>' + p.mask_child + '</td></tr>';
+        } else {
+          message += '<tr><th scope="row">兒童口罩庫存</th><td>未進貨</td></tr>';
+        }
       }
       message += '<tr><th scope="row">電話</th><td>' + p.phone + '</td></tr>';
       message += '<tr><th scope="row">住址</th><td>' + p.address + '</td></tr>';
