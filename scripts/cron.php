@@ -12,9 +12,3 @@ exec("cd {$rootPath} && /usr/bin/git add -A");
 exec("cd {$rootPath} && /usr/bin/git commit --author 'auto commit <noreply@localhost>' -m 'auto update @ {$now}'");
 
 exec("cd {$rootPath} && /usr/bin/git push origin master");
-
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://endpoint-dot-mask-9999.appspot.com/sync');
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Length: 0'));
-curl_exec($ch);
