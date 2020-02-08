@@ -102,6 +102,7 @@ map.on('singleclick', function(evt) {
       message += '<tr><th scope="row">備註</th><td>' + p.note + '</td></tr>';
       message += '<tr><th scope="row">更新時間</th><td>' + p.updated + '</td></tr>';
       message += '</tbody></table>';
+      message += '<a href="https://forms.gle/7jFfScLedN3A8ENA8" target="_blank">藥局的朋友可以點這裡補充資訊</a>';
       sidebarTitle.innerHTML = p.name;
       content.innerHTML = message;
       pointClicked = true;
