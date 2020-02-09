@@ -14,10 +14,14 @@ for (var z = 0; z < 20; ++z) {
 
 function pointStyleFunction(f, r) {
   var p = f.getProperties(), color = '#ff0';
-  if(p.mask_adult > 0 && p.mask_child > 0) {
-    color = '#0f0';
-  } else if(p.updated === '') {
+  if(p.updated === '') {
     color = '#ccc';
+  } else if(p.mask_adult > 100 && p.mask_child > 25) {
+    color = '#48c774'; // > 50% stock
+  } else if(p.mask_adult > 40 && p.mask_child > 10) {
+    color = '#ffdd57'; // > 20% stock
+  } else if(p.mask_adult > 20 && p.mask_child > 5) {
+    color = '#fc82b1'; // > 10% stock
   } else if(p.mask_adult == 0 && p.mask_child == 0) {
     color = '#f00';
   }
