@@ -13,7 +13,7 @@ for (var z = 0; z < 20; ++z) {
 }
 
 function pointStyleFunction(f, r) {
-  var p = f.getProperties(), color = '#ff0';
+  var p = f.getProperties(), color;
   if(p.updated === '') {
     color = '#ccc';
   } else if(p.mask_adult > 100 && p.mask_child > 25) {
@@ -22,8 +22,8 @@ function pointStyleFunction(f, r) {
     color = '#ffdd57'; // > 20% stock
   } else if(p.mask_adult > 20 && p.mask_child > 5) {
     color = '#fc82b1'; // > 10% stock
-  } else if(p.mask_adult == 0 && p.mask_child == 0) {
-    color = '#f00';
+  } else {
+    color = '#f00'; // < 10% stock, treat as 0
   }
   return new ol.style.Style({
     image: new ol.style.RegularShape({
