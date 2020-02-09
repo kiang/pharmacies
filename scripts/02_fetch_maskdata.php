@@ -42,6 +42,9 @@ while($line = fgetcsv($fh1, 2048)) {
                 'note' => $data['備註'],
                 'custom_note' => isset($notices[$line[0]]) ? $notices[$line[0]][2] : '', //藥局自行提供的備註訊息
                 'website' => isset($notices[$line[0]]) ? $notices[$line[0]][3] : '', //藥局自行提供的網址
+                'county' => $data['縣市'],
+                'town' => $data['鄉鎮市區'],
+                'cunli' => $data['村里'],
             ),
             'geometry' => array(
                 'type' => 'Point',
