@@ -42,17 +42,20 @@ function pointStyleFunction(f, r) {
 var sidebarTitle = document.getElementById('sidebarTitle');
 var content = document.getElementById('sidebarContent');
 
-var vectorPoints = new ol.layer.Vector({
-  source: new ol.source.Vector({
-    url: 'json/points.json',
-    format: new ol.format.GeoJSON()
-  }),
-  style: pointStyleFunction
-});
 var appView = new ol.View({
   center: ol.proj.fromLonLat([120.221507, 23.000694]),
   zoom: 14
 });
+
+var vectorPoints = new ol.layer.Vector({
+  source: new ol.source.Vector({
+    format: new ol.format.GeoJSON({
+      featureProjection: appView.getProjection()
+    })
+  }),
+  style: pointStyleFunction
+});
+
 var baseLayer = new ol.layer.Tile({
     source: new ol.source.WMTS({
         matrixSet: 'EPSG:3857',
@@ -76,6 +79,7 @@ var map = new ol.Map({
   target: 'map',
   view: appView
 });
+
 map.addControl(sidebar);
 var pointClicked = false;
 map.on('singleclick', function(evt) {
@@ -161,6 +165,116 @@ $('#btn-geolocation').click(function () {
   var coordinates = geolocation.getPosition();
   if(coordinates) {
     appView.setCenter(coordinates);
+  } else {
+    alert('目前使用的設備無法提供地理資訊');
   }
   return false;
 });
+
+var pointsFc;
+var adminTree = {};
+$.getJSON('json/points.json', {}, function(c) {
+  pointsFc = c;
+  var vSource = vectorPoints.getSource();
+  var vFormat = vSource.getFormat();
+  vSource.addFeatures(vFormat.readFeatures(pointsFc));
+
+  for(k in pointsFc.features) {
+    var p = pointsFc.features[k].properties;
+    if(p.county != '') {
+      if(!adminTree[p.county]) {
+        adminTree[p.county] = {};
+      }
+      if(!adminTree[p.county][p.town]) {
+        adminTree[p.county][p.town] = {};
+      }
+      if(!adminTree[p.county][p.town][p.cunli]) {
+        adminTree[p.county][p.town][p.cunli] = 0;
+      }
+      ++adminTree[p.county][p.town][p.cunli];
+    }
+  }
+  var countyOptions = '<option value="">--</option>';
+  for(county in adminTree) {
+    countyOptions += '<option value="' + county + '">' + county + '</option>';
+  }
+  $('#selectCounty').html(countyOptions);
+});
+$('#selectCounty').change(function() {
+  countyChange();
+  townChange();
+  cunliChange();
+  adminTreeChange();
+});
+$('#selectTown').change(function() {
+  townChange();
+  cunliChange();
+  adminTreeChange();
+});
+$('#selectCunli').change(function() {
+  cunliChange();
+  adminTreeChange();
+});
+
+var countyChange = function() {
+  selectedCounty = $('#selectCounty').val();
+  if(selectedCounty !== '') {
+    selectedTown = '';
+    var townOptions = '<option value="">--</option>';
+    for(town in adminTree[selectedCounty]) {
+      townOptions += '<option value="' + town + '">' + town + '</option>';
+    }
+    $('#selectTown').html(townOptions);
+  } else {
+    selectedTown = '';
+    selectedCunli = '';
+    $('#selectTown').html('');
+    $('#selectCunli').html('');
+  }
+}
+var townChange = function() {
+  selectedTown = $('#selectTown').val();
+  if(selectedTown !== '') {
+    var cunliOptions = '<option value="">--</option>';
+    for(cunli in adminTree[selectedCounty][selectedTown]) {
+      cunliOptions += '<option value="' + cunli + '">' + cunli + '(' + adminTree[selectedCounty][selectedTown][cunli] + ')</option>';
+    }
+    $('#selectCunli').html(cunliOptions);
+  } else {
+    selectedCunli = '';
+    $('#selectCunli').html('');
+  }
+}
+var cunliChange = function() {
+  selectedCunli = $('#selectCunli').val();
+}
+
+var selectedCounty = '', selectedTown = '', selectedCunli = '';
+var adminTreeChange = function() {
+  var vSource = vectorPoints.getSource();
+  var vFormat = vSource.getFormat();
+  var baseFeatures = vFormat.readFeatures(pointsFc);
+  var newFeatures = [];
+  vSource.clear();
+  if(selectedCounty !== '') {
+    for(k in baseFeatures) {
+      var p = baseFeatures[k].getProperties();
+      if(p.county === selectedCounty) {
+        if(selectedTown === '') {
+          newFeatures.push(baseFeatures[k]);
+        } else if(p.town === selectedTown) {
+          if(selectedCunli === '' || p.cunli === selectedCunli) {
+            newFeatures.push(baseFeatures[k]);
+          }
+        }
+      }
+    }
+    vSource.addFeatures(newFeatures);
+  } else {
+    vSource.addFeatures(baseFeatures);
+  }
+  var ex = vSource.getExtent();
+  if(!ol.extent.isEmpty(ex)) {
+    map.getView().fit(ex);
+  }
+}
