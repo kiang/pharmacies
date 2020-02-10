@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="css/ol.css" type="text/css">
     <link rel="stylesheet" href="css/ol3-sidebar.min.css" type="text/css" />
     <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/jquery-ui.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/dark-hive/theme.min.css" crossorigin="anonymous">
     <style>
         body {
             padding: 0;
@@ -28,6 +30,7 @@
             font-style: italic;
             color: #AAA;
         }
+        .ui-front { z-index: 9999; }
     </style>
 </head>
 <body>
@@ -91,6 +94,14 @@
                     <a href="#" class="btn btn-primary btn-lg btn-block" id="btn-geolocation">回到目前位置</a>
                     <p><hr /></p>
                     <div class="card">
+                        <h5 class="card-title">搜尋</h5>
+                        <div class="form-group">
+                            <label for="findPoint">名稱或代號</label>
+                            <input type="text" id="findPoint" name="findPoint" class="form-control"></input>
+                        </div>
+                    </div>
+                    <p><hr /></p>
+                    <div class="card">
                         <h5 class="card-title">行政區過濾</h5>
                         <div class="form-group">
                             <label for="selectCounty">縣市</label>
@@ -105,7 +116,6 @@
                             <select id="selectCunli" name="selectCunli" class="form-control form-select"></select>
                         </div>
                     </div>
-                    
                 </div>
             </div>
             <div class="sidebar-pane" id="fb">
@@ -115,11 +125,12 @@
     </div>
 
     <div id="map" class="sidebar-map"></div>
-    <script src="js/routie.min.js"></script>
+    <script src="js/routie.min.js" type="text/javascript"></script>
     <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
     <script src="js/ol.js" type="text/javascript"></script>
-    <script src="js/ol5-sidebar.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/ol5-sidebar.min.js" type="text/javascript"></script>
+    <script src="js/main.js" type="text/javascript"></script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80817009-1"></script>
 <script>
