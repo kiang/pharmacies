@@ -1,4 +1,27 @@
 <?php
+$serviceNoticesFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.csv';
+$sFh = fopen($serviceNoticesFile, 'r');
+/*
+Array
+(
+    [0] => 醫事機構代碼
+    [1] => 醫事機構名稱
+    [2] => 業務組別
+    [3] => 特約類別
+    [4] => 看診年度
+    [5] => 看診星期
+    [6] => 看診備註
+    [7] => 機構開業狀況
+)
+ */
+$head = fgetcsv($sFh, 2048);
+$serviceNotices = array();
+while($line = fgetcsv($sFh, 2048)) {
+    if($line[3] == 5) {
+        $serviceNotices[$line[0]] = $line[6];
+    }
+}
+fclose($sFh);
 
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
 file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
@@ -45,6 +68,7 @@ while($line = fgetcsv($fh1, 2048)) {
                 'county' => $data['縣市'],
                 'town' => $data['鄉鎮市區'],
                 'cunli' => $data['村里'],
+                'service_note' => isset($serviceNotices[$line[0]]) ? $serviceNotices[$line[0]] : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
             ),
             'geometry' => array(
                 'type' => 'Point',
