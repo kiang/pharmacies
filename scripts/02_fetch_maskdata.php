@@ -18,7 +18,10 @@ $head = fgetcsv($sFh, 2048);
 $serviceNotices = array();
 while($line = fgetcsv($sFh, 2048)) {
     if($line[3] == 5) {
-        $serviceNotices[$line[0]] = $line[6];
+        $serviceNotices[$line[0]] = array(
+            $line[5],
+            $line[6],
+        );
     }
 }
 fclose($sFh);
@@ -68,7 +71,8 @@ while($line = fgetcsv($fh1, 2048)) {
                 'county' => $data['縣市'],
                 'town' => $data['鄉鎮市區'],
                 'cunli' => $data['村里'],
-                'service_note' => isset($serviceNotices[$line[0]]) ? $serviceNotices[$line[0]] : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
+                'service_periods' => isset($serviceNotices[$line[0]]) ? $serviceNotices[$line[0]][0] : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
+                'service_note' => isset($serviceNotices[$line[0]]) ? $serviceNotices[$line[0]][1] : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
             ),
             'geometry' => array(
                 'type' => 'Point',
