@@ -12,8 +12,21 @@ for (var z = 0; z < 20; ++z) {
     matrixIds[z] = z;
 }
 
-function pointStyleFunction(f, r) {
-  var p = f.getProperties(), color;
+function pointStyleFunction(f) {
+  var p = f.getProperties(), color, stroke, radius;
+  if(f === currentFeature) {
+    stroke = new ol.style.Stroke({
+      color: '#000',
+      width: 5
+    });
+    radius = 25;
+  } else {
+    stroke = new ol.style.Stroke({
+      color: '#fff',
+      width: 2
+    });
+    radius = 15;
+  }
   if(p.updated === '') {
     color = '#ccc';
   } else if(p.mask_adult > 100 && p.mask_child > 25) {
@@ -27,15 +40,12 @@ function pointStyleFunction(f, r) {
   }
   return new ol.style.Style({
     image: new ol.style.RegularShape({
-      radius: 15,
+      radius: radius,
       points: 3,
       fill: new ol.style.Fill({
         color: color
       }),
-      stroke: new ol.style.Stroke({
-        color: '#fff',
-        width: 2
-      })
+      stroke: stroke
     })
   })
 }
@@ -87,9 +97,33 @@ map.on('singleclick', function(evt) {
   pointClicked = false;
   map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
     if(false === pointClicked) {
+      var p = feature.getProperties();
+      var targetHash = '#' + p.id;
+      if (window.location.hash !== targetHash) {
+        window.location.hash = targetHash;
+      }
+      pointClicked = true;
+    }
+  });
+});
+
+var previousFeature = false;
+var currentFeature = false;
+function showPoint(pointId) {
+  var features = vectorPoints.getSource().getFeatures();
+  var pointFound = false;
+  for(k in features) {
+    var p = features[k].getProperties();
+    if(p.id === pointId) {
+      currentFeature = features[k];
+      features[k].setStyle(pointStyleFunction(features[k]));
+      if(false !== previousFeature) {
+        previousFeature.setStyle(pointStyleFunction(previousFeature));
+      }
+      previousFeature = currentFeature;
+      appView.setCenter(features[k].getGeometry().getCoordinates());
       var message = '<table class="table table-dark">';
       message += '<tbody>';
-      var p = feature.getProperties();
       message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
       if(p.custom_note != '') {
         message += '<tr><th scope="row">口罩銷售提醒</th><td>' + p.custom_note + '</td></tr>';
@@ -112,12 +146,10 @@ map.on('singleclick', function(evt) {
       message += '</tbody></table>';
       sidebarTitle.innerHTML = p.name;
       content.innerHTML = message;
-      pointClicked = true;
     }
-  });
+  }
   sidebar.open('home');
-});
-
+}
 
 var geolocation = new ol.Geolocation({
   projection: appView.getProjection()
@@ -199,6 +231,7 @@ $.getJSON('json/points.json', {}, function(c) {
     countyOptions += '<option value="' + county + '">' + county + '</option>';
   }
   $('#selectCounty').html(countyOptions);
+  routie(':pointId', showPoint);
 });
 $('#selectCounty').change(function() {
   countyChange();
