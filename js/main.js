@@ -147,6 +147,7 @@ function showPoint(pointId) {
       message += '<tr><th scope="row">住址</th><td>' + p.address + '</td></tr>';
       message += '<tr><th scope="row">營業日</th><td>' + p.available + '</td></tr>';
       message += '<tr><th scope="row">備註</th><td>' + p.note + '</td></tr>';
+      message += '<tr><th scope="row">看診備註</th><td>' + p.service_note + '</td></tr>';
       message += '<tr><th scope="row">更新時間</th><td>' + p.updated + '</td></tr>';
       message += '</tbody></table>';
       sidebarTitle.innerHTML = p.name;
