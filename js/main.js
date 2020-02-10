@@ -110,6 +110,10 @@ map.on('singleclick', function(evt) {
 var previousFeature = false;
 var currentFeature = false;
 function showPoint(pointId) {
+  $('#findPoint').val(pointId);
+  selectedCounty = '';
+  adminTreeChange();
+  
   var features = vectorPoints.getSource().getFeatures();
   var pointFound = false;
   for(k in features) {
@@ -122,6 +126,7 @@ function showPoint(pointId) {
       }
       previousFeature = currentFeature;
       appView.setCenter(features[k].getGeometry().getCoordinates());
+      appView.setZoom(15);
       var message = '<table class="table table-dark">';
       message += '<tbody>';
       message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
@@ -205,6 +210,7 @@ $('#btn-geolocation').click(function () {
 
 var pointsFc;
 var adminTree = {};
+var findTerms = [];
 $.getJSON('json/points.json', {}, function(c) {
   pointsFc = c;
   var vSource = vectorPoints.getSource();
@@ -225,6 +231,10 @@ $.getJSON('json/points.json', {}, function(c) {
       }
       ++adminTree[p.county][p.town][p.cunli];
     }
+    findTerms.push({
+      value: p.id,
+      label: p.id + ' ' + p.name
+    });
   }
   var countyOptions = '<option value="">--</option>';
   for(county in adminTree) {
@@ -232,21 +242,37 @@ $.getJSON('json/points.json', {}, function(c) {
   }
   $('#selectCounty').html(countyOptions);
   routie(':pointId', showPoint);
+
+  $('#findPoint').autocomplete({
+    source: findTerms,
+    select: function(event, ui) {
+      var targetHash = '#' + ui.item.value;
+      if (window.location.hash !== targetHash) {
+        window.location.hash = targetHash;
+      }
+    }
+  });
 });
 $('#selectCounty').change(function() {
   countyChange();
   townChange();
   cunliChange();
   adminTreeChange();
+  window.location.hash = '';
+  $('#findPoint').val('');
 });
 $('#selectTown').change(function() {
   townChange();
   cunliChange();
   adminTreeChange();
+  window.location.hash = '';
+  $('#findPoint').val('');
 });
 $('#selectCunli').change(function() {
   cunliChange();
   adminTreeChange();
+  window.location.hash = '';
+  $('#findPoint').val('');
 });
 
 var countyChange = function() {
@@ -267,7 +293,7 @@ var countyChange = function() {
 }
 var townChange = function() {
   selectedTown = $('#selectTown').val();
-  if(selectedTown !== '') {
+  if(selectedTown !== '' && adminTree[selectedCounty]) {
     var cunliOptions = '<option value="">--</option>';
     for(cunli in adminTree[selectedCounty][selectedTown]) {
       cunliOptions += '<option value="' + cunli + '">' + cunli + '(' + adminTree[selectedCounty][selectedTown][cunli] + ')</option>';
