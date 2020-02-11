@@ -3,14 +3,18 @@
 $config = require __DIR__ . '/config.php';
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $head = fgetcsv($fh, 2048);
-if(count($head) === 14) {
-    $head[] = '縣市';
-    $head[] = '鄉鎮市區';
-    $head[] = '村里';
+while(count($head) !== 14) {
+    array_pop($head);
 }
+$head[] = '縣市';
+$head[] = '鄉鎮市區';
+$head[] = '村里';
 $pool = array();
 $pool[] = $head;
 while($line = fgetcsv($fh, 2048)) {
+    while(count($line) !== 14) {
+        array_pop($line);
+    }    
     $data = array(
         'COUNTY' => '',
         'TOWN' => '',
