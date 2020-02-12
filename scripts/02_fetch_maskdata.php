@@ -1,4 +1,12 @@
 <?php
+$pFh = fopen(dirname(__DIR__) . '/raw/pharmacyMore.csv', 'r');
+$head = fgetcsv($pFh, 2048);
+$pharmacyMore = array();
+while($line = fgetcsv($pFh, 2048)) {
+    $pharmacyMore[$line[0]] = $line[3];
+}
+fclose($pFh);
+
 $serviceNoticesFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.csv';
 $sFh = fopen($serviceNoticesFile, 'r');
 /*
@@ -18,6 +26,9 @@ $head = fgetcsv($sFh, 2048);
 $serviceNotices = array();
 while($line = fgetcsv($sFh, 2048)) {
     if($line[3] == 5) {
+        if(empty($line[6]) && isset($pharmacyMore[$line[0]])) {
+            $line[6] = $pharmacyMore[$line[0]];
+        }
         $serviceNotices[$line[0]] = array(
             $line[5],
             $line[6],
