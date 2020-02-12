@@ -1,7 +1,25 @@
 <?php
 
 $config = require __DIR__ . '/config.php';
-$fh = fopen(dirname(__DIR__) . '/raw/A21030000I-D21005-004.csv', 'r');
+
+$fixes = array(
+    '5901090092' => array(
+        '02 -25353536',
+        '台北市大同區民族西路303巷19號1樓',
+    ),
+    '5901090270' => array(
+        '02 -25925727',
+        '台北市大同區延平北路3段61號－3',
+    ),
+    '5903010305' => array(
+        '04-25122212',
+        '臺中市豐原區圓環東路617號',
+    ),
+);
+
+$localFile = dirname(__DIR__) . '/raw/A21030000I-D21005-004.csv';
+file_put_contents($localFile, file_get_contents('https://data.nhi.gov.tw/Datasets/DatasetResource.ashx?rId=A21030000I-D21005-004'));
+$fh = fopen($localFile, 'r');
 /*
 Array
 (
@@ -20,15 +38,27 @@ Array
 )
 */
 $head = fgetcsv($fh, 2048);
-$head[0] = substr($head[0], 3);
-$head[] = 'TGOS X';
-$head[] = 'TGOS Y';
+if('efbbbf' === bin2hex(substr($head[0], 0, 3))) {
+    $head[0] = substr($head[0], 3);
+}
+$head[12] = 'TGOS X';
+$head[13] = 'TGOS Y';
+$head[14] = '縣市';
+$head[15] = '鄉鎮市區';
+$head[16] = '村里';
 $oFh = fopen(dirname(__DIR__) . '/data.csv', 'w');
 fputcsv($oFh, $head);
 while($line = fgetcsv($fh, 2048)) {
     $line[4] = trim($line[4]);
-    $line[] = '';
-    $line[] = '';
+    $line[12] = '';
+    $line[13] = '';
+    $line[14] = '';
+    $line[15] = '';
+    $line[16] = '';
+    if(isset($fixes[$line[0]]) && empty($line[4])) {
+        $line[3] = $fixes[$line[0]][0];
+        $line[4] = $fixes[$line[0]][1];
+    }
     if(!empty($line[4])) {
         $tgosFile = dirname(__DIR__) . '/tgos/' . $line[4] . '.json';
         if(!file_exists($tgosFile)) {
@@ -63,12 +93,17 @@ while($line = fgetcsv($fh, 2048)) {
         if(isset($json['AddressList'][0])) {
             $line[12] = $json['AddressList'][0]['X'];
             $line[13] = $json['AddressList'][0]['Y'];
+            $line[14] = $json['AddressList'][0]['COUNTY'];
+            $line[15] = $json['AddressList'][0]['TOWN'];
+            $line[16] = $json['AddressList'][0]['VILLAGE'];
         }
     }
     fputcsv($oFh, $line);
 }
 
-$fh = fopen(dirname(__DIR__) . '/raw/A21030000I-D21004-004.csv', 'r');
+$localFile = dirname(__DIR__) . '/raw/A21030000I-D21004-004.csv';
+file_put_contents($localFile, file_get_contents('https://data.nhi.gov.tw/Datasets/DatasetResource.ashx?rId=A21030000I-D21004-004'));
+$fh = fopen($localFile, 'r');
 /*
 Array
 (
@@ -92,8 +127,11 @@ while($line = fgetcsv($fh, 2048)) {
         continue;
     }
     $line[4] = trim($line[4]);
-    $line[] = '';
-    $line[] = '';
+    $line[12] = '';
+    $line[13] = '';
+    $line[14] = '';
+    $line[15] = '';
+    $line[16] = '';
     if(!empty($line[4])) {
         $tgosFile = dirname(__DIR__) . '/tgos/' . $line[4] . '.json';
         if(!file_exists($tgosFile)) {
@@ -128,6 +166,9 @@ while($line = fgetcsv($fh, 2048)) {
         if(isset($json['AddressList'][0])) {
             $line[12] = $json['AddressList'][0]['X'];
             $line[13] = $json['AddressList'][0]['Y'];
+            $line[14] = $json['AddressList'][0]['COUNTY'];
+            $line[15] = $json['AddressList'][0]['TOWN'];
+            $line[16] = $json['AddressList'][0]['VILLAGE'];
         }
     }
     fputcsv($oFh, $line);
