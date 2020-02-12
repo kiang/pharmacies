@@ -261,6 +261,7 @@ $('#selectCounty').change(function() {
   adminTreeChange();
   window.location.hash = '';
   $('#findPoint').val('');
+  sidebar.close();
 });
 $('#selectTown').change(function() {
   townChange();
@@ -268,12 +269,14 @@ $('#selectTown').change(function() {
   adminTreeChange();
   window.location.hash = '';
   $('#findPoint').val('');
+  sidebar.close();
 });
 $('#selectCunli').change(function() {
   cunliChange();
   adminTreeChange();
   window.location.hash = '';
   $('#findPoint').val('');
+  sidebar.close();
 });
 
 var countyChange = function() {
