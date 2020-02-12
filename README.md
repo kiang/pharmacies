@@ -15,6 +15,14 @@
 
 部份資料的地理座標使用了 [國土測繪圖資服務雲](https://maps.nlsc.gov.tw/T09/mapshow.action?language=ZH) 進行檢索，同時也併入了來自 [@lanma](https://github.com/WJWang/mask-help-info-api/issues/2) 提供的修正
 
+相關應用與說明可以參考 [口罩供需資訊平台](https://g0v.hackmd.io/@kiang/mask-info)
+
+## 介紹文章
+
+1. [藥局口罩採購地圖上線](https://medium.com/%E6%B1%9F%E6%98%8E%E5%AE%97-kiang/%E8%97%A5%E5%B1%80%E5%8F%A3%E7%BD%A9%E6%8E%A1%E8%B3%BC%E5%9C%B0%E5%9C%96%E4%B8%8A%E7%B7%9A-54e11bd63e84)
+2. [藥局口罩採購地圖上線後記](https://medium.com/%E6%B1%9F%E6%98%8E%E5%AE%97-kiang/%E8%97%A5%E5%B1%80%E5%8F%A3%E7%BD%A9%E6%8E%A1%E8%B3%BC%E5%9C%B0%E5%9C%96%E4%B8%8A%E7%B7%9A%E5%BE%8C%E8%A8%98-8277f1343816)
+3. [藥局口罩採購地圖加入搜尋功能](https://medium.com/%E6%B1%9F%E6%98%8E%E5%AE%97-kiang/%E8%97%A5%E5%B1%80%E5%8F%A3%E7%BD%A9%E6%8E%A1%E8%B3%BC%E5%9C%B0%E5%9C%96%E5%8A%A0%E5%85%A5%E6%90%9C%E5%B0%8B%E5%8A%9F%E8%83%BD-c4876418c612)
+
 ## 程式說明
 
 系統排程
