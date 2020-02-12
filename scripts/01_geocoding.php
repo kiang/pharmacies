@@ -87,6 +87,7 @@ while($line = fgetcsv($fh, 2048)) {
         $line[3] = $fixes[$line[0]][0];
         $line[4] = $fixes[$line[0]][1];
     }
+    $line[11] = str_replace('\\', '/', $line[11]);
     if(!empty($line[4])) {
         $tgosFile = dirname(__DIR__) . '/tgos/' . $line[4] . '.json';
         if(!file_exists($tgosFile)) {
@@ -160,6 +161,7 @@ while($line = fgetcsv($fh, 2048)) {
     $line[14] = '';
     $line[15] = '';
     $line[16] = '';
+    $line[11] = str_replace('\\', '/', $line[11]);
     if(isset($fixes[$line[0]]) && empty($line[4])) {
         $line[3] = $fixes[$line[0]][0];
         $line[4] = $fixes[$line[0]][1];
