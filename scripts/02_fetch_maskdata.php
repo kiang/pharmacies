@@ -34,6 +34,9 @@ $fc = array(
 $head = fgetcsv($fh1, 2048);
 while($line = fgetcsv($fh1, 2048)) {
     $data = array_combine($head, $line);
+    if(empty($data['備註']) && isset($pharmacyMore[$line[0]])) {
+        $data['備註'] = $pharmacyMore[$line[0]];
+    }
     if(!empty($data['TGOS X'])) {
         $f = array(
             'type' => 'Feature',
