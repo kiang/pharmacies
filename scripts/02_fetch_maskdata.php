@@ -7,36 +7,6 @@ while($line = fgetcsv($pFh, 2048)) {
 }
 fclose($pFh);
 
-$serviceNoticesFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.csv';
-$sFh = fopen($serviceNoticesFile, 'r');
-/*
-Array
-(
-    [0] => 醫事機構代碼
-    [1] => 醫事機構名稱
-    [2] => 業務組別
-    [3] => 特約類別
-    [4] => 看診年度
-    [5] => 看診星期
-    [6] => 看診備註
-    [7] => 機構開業狀況
-)
- */
-$head = fgetcsv($sFh, 2048);
-$serviceNotices = array();
-while($line = fgetcsv($sFh, 2048)) {
-    if($line[3] == 5) {
-        if(empty($line[6]) && isset($pharmacyMore[$line[0]])) {
-            $line[6] = $pharmacyMore[$line[0]];
-        }
-        $serviceNotices[$line[0]] = array(
-            $line[5],
-            $line[6],
-        );
-    }
-}
-fclose($sFh);
-
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
 file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
 
@@ -76,13 +46,13 @@ while($line = fgetcsv($fh1, 2048)) {
                 'mask_child' => 0,
                 'updated' => strval(''),
                 'available' => strval($data['固定看診時段 ']),
-                'note' => isset($serviceNotices[$line[0]]) ? strval($serviceNotices[$line[0]][1]) : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
+                'note' => $data['備註'], // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
                 'custom_note' => isset($notices[$line[0]]) ? strval($notices[$line[0]][2]) : '', //藥局自行提供的備註訊息
                 'website' => !empty($notices[$line[0]]) ? strval($notices[$line[0]][3]) : '', //藥局自行提供的網址
                 'county' => strval($data['縣市']),
                 'town' => strval($data['鄉鎮市區']),
                 'cunli' => strval($data['村里']),
-                'service_periods' => isset($serviceNotices[$line[0]]) ? strval($serviceNotices[$line[0]][0]) : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
+                'service_periods' => $data['看診星期'], // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
             ),
             'geometry' => array(
                 'type' => 'Point',

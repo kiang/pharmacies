@@ -1,5 +1,33 @@
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
+
+$odsFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.ods';
+file_put_contents($odsFile, file_get_contents('https://data.nhi.gov.tw/resource/OpenData/%E5%85%A8%E6%B0%91%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%9A%AA%E7%89%B9%E7%B4%84%E9%99%A2%E6%89%80%E5%9B%BA%E5%AE%9A%E7%9C%8B%E8%A8%BA%E6%99%82%E6%AE%B5.ods'));
+
+$reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Ods');
+$reader->setReadDataOnly(TRUE);
+$spreadsheet = $reader->load($odsFile);
+$sheets = $spreadsheet->getAllSheets();
+$note = array();
+foreach($sheets AS $sheet) {
+    $data = $sheet->toArray();
+    if(count($data) > 1) {
+        $head = false;
+        foreach($data AS $line) {
+            if(false !== $head) {
+                if($line[3] == 5 || false !== strpos($line[1], '衛生所')) {
+                    $note[$line[0]] = array(
+                        $line[5], //看診星期
+                        $line[6], //看診備註
+                    );
+                }
+            } else {
+                $head = $line;
+            }
+        }
+    }
+}
+
 $config = require __DIR__ . '/config.php';
 
 $fixes = array(
@@ -74,6 +102,7 @@ $head[13] = 'TGOS Y';
 $head[14] = '縣市';
 $head[15] = '鄉鎮市區';
 $head[16] = '村里';
+$head[17] = '看診星期';
 $oFh = fopen(dirname(__DIR__) . '/data.csv', 'w');
 fputcsv($oFh, $head);
 while($line = fgetcsv($fh, 2048)) {
@@ -83,6 +112,11 @@ while($line = fgetcsv($fh, 2048)) {
     $line[14] = '';
     $line[15] = '';
     $line[16] = '';
+    $line[17] = '';
+    if(isset($note[$line[0]])) {
+        $line[11] = $note[$line[0]][1];
+        $line[17] = $note[$line[0]][0];
+    }
     if(isset($fixes[$line[0]]) && empty($line[4])) {
         $line[3] = $fixes[$line[0]][0];
         $line[4] = $fixes[$line[0]][1];
@@ -161,7 +195,12 @@ while($line = fgetcsv($fh, 2048)) {
     $line[14] = '';
     $line[15] = '';
     $line[16] = '';
+    $line[17] = '';
     $line[11] = str_replace('\\', '/', $line[11]);
+    if(isset($note[$line[0]])) {
+        $line[11] = $note[$line[0]][1];
+        $line[17] = $note[$line[0]][0];
+    }
     if(isset($fixes[$line[0]]) && empty($line[4])) {
         $line[3] = $fixes[$line[0]][0];
         $line[4] = $fixes[$line[0]][1];
