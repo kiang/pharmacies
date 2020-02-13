@@ -68,28 +68,27 @@ while($line = fgetcsv($fh1, 2048)) {
         $f = array(
             'type' => 'Feature',
             'properties' => array(
-                'id' => $line[0],
-                'name' => $data['醫事機構名稱'],
-                'phone' => $data['電話'],
-                'address' => $data['地 址 '],
+                'id' => strval($line[0]),
+                'name' => strval($data['醫事機構名稱']),
+                'phone' => strval($data['電話']),
+                'address' => strval($data['地 址 ']),
                 'mask_adult' => 0,
                 'mask_child' => 0,
-                'updated' => '',
-                'available' => $data['固定看診時段 '],
-                'note' => $data['備註'],
-                'custom_note' => isset($notices[$line[0]]) ? $notices[$line[0]][2] : '', //藥局自行提供的備註訊息
-                'website' => isset($notices[$line[0]]) ? $notices[$line[0]][3] : '', //藥局自行提供的網址
-                'county' => $data['縣市'],
-                'town' => $data['鄉鎮市區'],
-                'cunli' => $data['村里'],
-                'service_periods' => isset($serviceNotices[$line[0]]) ? $serviceNotices[$line[0]][0] : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
-                'service_note' => isset($serviceNotices[$line[0]]) ? $serviceNotices[$line[0]][1] : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
+                'updated' => strval(''),
+                'available' => strval($data['固定看診時段 ']),
+                'note' => isset($serviceNotices[$line[0]]) ? strval($serviceNotices[$line[0]][1]) : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
+                'custom_note' => isset($notices[$line[0]]) ? strval($notices[$line[0]][2]) : '', //藥局自行提供的備註訊息
+                'website' => !empty($notices[$line[0]]) ? strval($notices[$line[0]][3]) : '', //藥局自行提供的網址
+                'county' => strval($data['縣市']),
+                'town' => strval($data['鄉鎮市區']),
+                'cunli' => strval($data['村里']),
+                'service_periods' => isset($serviceNotices[$line[0]]) ? strval($serviceNotices[$line[0]][0]) : '', // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
             ),
             'geometry' => array(
                 'type' => 'Point',
                 'coordinates' => array(
-                    $data['TGOS X'],
-                    $data['TGOS Y'],
+                    floatval($data['TGOS X']),
+                    floatval($data['TGOS Y']),
                 ),
             ),
         );
@@ -118,16 +117,13 @@ while($line = fgetcsv($fh2, 2048)) {
 }
 foreach($fc['features'] AS $k => $f) {
     if(isset($maskData[$f['properties']['id']])) {
-        $total = $maskData[$f['properties']['id']][4] + $maskData[$f['properties']['id']][5];
-        $fc['features'][$k]['properties']['mask_adult'] = $maskData[$f['properties']['id']][4];
-        $fc['features'][$k]['properties']['mask_child'] = $maskData[$f['properties']['id']][5];
-        $fc['features'][$k]['properties']['updated'] = $maskData[$f['properties']['id']][6];
+        $fc['features'][$k]['properties']['mask_adult'] = intval($maskData[$f['properties']['id']][4]);
+        $fc['features'][$k]['properties']['mask_child'] = intval($maskData[$f['properties']['id']][5]);
+        $fc['features'][$k]['properties']['updated'] = strval($maskData[$f['properties']['id']][6]);
         unset($maskData[$f['properties']['id']]);
     }
-    $fc['features'][$k]['properties']['id'] = 'id_' . $fc['features'][$k]['properties']['id'];
 }
-$jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_NUMERIC_CHECK | JSON_UNESCAPED_UNICODE);
-$jsonString = str_replace('"id": "id_', '"id": "', $jsonString);
+$jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 file_put_contents(dirname(__DIR__) . '/json/points.json', $jsonString);
 
 if(!empty($maskData)) {
