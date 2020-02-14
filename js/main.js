@@ -127,6 +127,7 @@ function showPoint(pointId) {
       previousFeature = currentFeature;
       appView.setCenter(features[k].getGeometry().getCoordinates());
       appView.setZoom(15);
+      var lonLat = ol.proj.toLonLat(p.geometry.getCoordinates());
       var message = '<table class="table table-dark">';
       message += '<tbody>';
       message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
@@ -148,6 +149,12 @@ function showPoint(pointId) {
       message += '<tr><th scope="row">營業日</th><td>' + p.available + '</td></tr>';
       message += '<tr><th scope="row">備註</th><td>' + p.note.replace(/\\n/g, '<br />') + '</td></tr>';
       message += '<tr><th scope="row">更新時間</th><td>' + p.updated + '</td></tr>';
+      message += '<tr><th scope="row">導航</th><td>';
+      message += '<div class="btn-group-vertical" role="group" style="width: 100%;">';
+      message += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + lonLat[1] + ',' + lonLat[0] + '&travelmode=driving" target="_blank" class="btn btn-info btn-lg btn-block">Google</a>';
+      message += '<a href="https://wego.here.com/directions/drive/mylocation/' + lonLat[1] + ',' + lonLat[0] + '" target="_blank" class="btn btn-info btn-lg btn-block">Here WeGo</a>';
+      message += '<a href="https://bing.com/maps/default.aspx?rtp=~pos.' + lonLat[1] + '_' + lonLat[0] + '" target="_blank" class="btn btn-info btn-lg btn-block">Bing</a>';
+      message += '</div></td></tr>';
       message += '</tbody></table>';
       sidebarTitle.innerHTML = p.name;
       content.innerHTML = message;
