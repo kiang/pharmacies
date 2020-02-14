@@ -1,30 +1,16 @@
 <?php
-require dirname(__DIR__) . '/vendor/autoload.php';
+$noteFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.csv';
+file_put_contents($noteFile, file_get_contents('http://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21006-001'));
 
-$odsFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.ods';
-file_put_contents($odsFile, file_get_contents('https://data.nhi.gov.tw/resource/OpenData/%E5%85%A8%E6%B0%91%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%9A%AA%E7%89%B9%E7%B4%84%E9%99%A2%E6%89%80%E5%9B%BA%E5%AE%9A%E7%9C%8B%E8%A8%BA%E6%99%82%E6%AE%B5.ods'));
-
-$reader = \PhpOffice\PhpSpreadsheet\IOFactory::createReader('Ods');
-$reader->setReadDataOnly(TRUE);
-$spreadsheet = $reader->load($odsFile);
-$sheets = $spreadsheet->getAllSheets();
+$fh = fopen($noteFile, 'r');
+$head = fgetcsv($fh, 2048);
 $note = array();
-foreach($sheets AS $sheet) {
-    $data = $sheet->toArray();
-    if(count($data) > 1) {
-        $head = false;
-        foreach($data AS $line) {
-            if(false !== $head) {
-                if($line[3] == 5 || false !== strpos($line[1], '衛生所')) {
-                    $note[$line[0]] = array(
-                        $line[5], //看診星期
-                        $line[6], //看診備註
-                    );
-                }
-            } else {
-                $head = $line;
-            }
-        }
+while($line = fgetcsv($fh, 2048)) {
+    if($line[3] == 5 || false !== strpos($line[1], '衛生所')) {
+        $note[$line[0]] = array(
+            $line[5], //看診星期
+            $line[6], //看診備註
+        );
     }
 }
 
