@@ -57,6 +57,10 @@ $fixes = array(
         '(03)8328152',
         '花蓮縣花蓮市國光里９鄰林森路４１９號',
     ),
+    '2336050010' => array(
+        '(04)26625040',
+        '臺中市沙鹿區文昌街20號',
+    ),
 );
 
 $localFile = dirname(__DIR__) . '/raw/A21030000I-D21005-004.csv';
@@ -103,7 +107,7 @@ while($line = fgetcsv($fh, 2048)) {
         $line[11] = $note[$line[0]][1];
         $line[17] = $note[$line[0]][0];
     }
-    if(isset($fixes[$line[0]]) && empty($line[4])) {
+    if(isset($fixes[$line[0]])) {
         $line[3] = $fixes[$line[0]][0];
         $line[4] = $fixes[$line[0]][1];
     }
@@ -187,7 +191,7 @@ while($line = fgetcsv($fh, 2048)) {
         $line[11] = $note[$line[0]][1];
         $line[17] = $note[$line[0]][0];
     }
-    if(isset($fixes[$line[0]]) && empty($line[4])) {
+    if(isset($fixes[$line[0]])) {
         $line[3] = $fixes[$line[0]][0];
         $line[4] = $fixes[$line[0]][1];
     }
