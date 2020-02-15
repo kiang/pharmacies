@@ -9,6 +9,24 @@ fclose($pFh);
 
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
 file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
+$fh2 = fopen($maskDataFile, 'r');
+/**
+Array
+(
+    [0] => 醫事機構代碼
+    [1] => 醫事機構名稱
+    [2] => 醫事機構地址
+    [3] => 醫事機構電話
+    [4] => 成人口罩總剩餘數
+    [5] => 兒童口罩剩餘數
+    [6] => 來源資料時間
+)
+*/
+$head = fgetcsv($fh2, 2048);
+$maskData = array();
+while($line = fgetcsv($fh2, 2048)) {
+    $maskData[$line[0]] = $line;
+}
 
 $cFh = fopen(dirname(__DIR__) . '/raw/custom_notices.csv', 'r');
 $head = fgetcsv($cFh, 2048);
@@ -33,6 +51,9 @@ $fc = array(
 );
 $head = fgetcsv($fh1, 2048);
 while($line = fgetcsv($fh1, 2048)) {
+    if(!isset($maskData[$line[0]])) {
+        continue;
+    }
     $data = array_combine($head, $line);
     if(empty($data['備註']) && isset($pharmacyMore[$line[0]])) {
         $data['備註'] = $pharmacyMore[$line[0]];
@@ -45,9 +66,9 @@ while($line = fgetcsv($fh1, 2048)) {
                 'name' => strval($data['醫事機構名稱']),
                 'phone' => strval($data['電話']),
                 'address' => strval($data['地 址 ']),
-                'mask_adult' => 0,
-                'mask_child' => 0,
-                'updated' => strval(''),
+                'mask_adult' => intval($maskData[$line[0]][4]),
+                'mask_child' => intval($maskData[$line[0]][5]),
+                'updated' => strval($maskData[$line[0]][6]),
                 'available' => strval($data['固定看診時段 ']),
                 'note' => $data['備註'], // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
                 'custom_note' => isset($notices[$line[0]]) ? strval($notices[$line[0]][2]) : '', //藥局自行提供的備註訊息
@@ -66,36 +87,11 @@ while($line = fgetcsv($fh1, 2048)) {
             ),
         );
         $fc['features'][] = $f;
+        unset($maskData[$line[0]]);
     }
 }
 fclose($fh1);
 
-$fh2 = fopen($maskDataFile, 'r');
-/**
-Array
-(
-    [0] => 醫事機構代碼
-    [1] => 醫事機構名稱
-    [2] => 醫事機構地址
-    [3] => 醫事機構電話
-    [4] => 成人口罩總剩餘數
-    [5] => 兒童口罩剩餘數
-    [6] => 來源資料時間
-)
-*/
-$head = fgetcsv($fh2, 2048);
-$maskData = array();
-while($line = fgetcsv($fh2, 2048)) {
-    $maskData[$line[0]] = $line;
-}
-foreach($fc['features'] AS $k => $f) {
-    if(isset($maskData[$f['properties']['id']])) {
-        $fc['features'][$k]['properties']['mask_adult'] = intval($maskData[$f['properties']['id']][4]);
-        $fc['features'][$k]['properties']['mask_child'] = intval($maskData[$f['properties']['id']][5]);
-        $fc['features'][$k]['properties']['updated'] = strval($maskData[$f['properties']['id']][6]);
-        unset($maskData[$f['properties']['id']]);
-    }
-}
 $jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 file_put_contents(dirname(__DIR__) . '/json/points.json', $jsonString);
 
