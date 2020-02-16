@@ -130,13 +130,12 @@ function showPoint(pointId) {
       var lonLat = ol.proj.toLonLat(p.geometry.getCoordinates());
       var message = '<table class="table table-dark">';
       message += '<tbody>';
-      message += '<tr><th scope="row" style="width: 100px;">名稱</th><td><a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a></td></tr>';
-      if(p.custom_note != '') {
-        message += '<tr><th scope="row">口罩銷售提醒</th><td>' + p.custom_note + '</td></tr>';
-      }
+      message += '<tr><th scope="row" style="width: 100px;">名稱</th><td>';
+      message += '<a href="http://www.nhi.gov.tw/QueryN/Query3_Detail.aspx?HospID=' + p.id + '" target="_blank">' + p.name + '</a>';
       if(p.website != '') {
-        message += '<tr><th scope="row">網站</th><td><a href="' + p.website + '" target="_blank">網站</a></td></tr>';
+        message += ' &nbsp; <a href="' + p.website + '" target="_blank" class="pull-right">(網站)</a>';
       }
+      message += '</td></tr>';
       if(p.updated === '') {
         message += '<tr><th scope="row">成人口罩庫存</th><td>無資料</td></tr>';
         message += '<tr><th scope="row">兒童口罩庫存</th><td>無資料</td></tr>';
@@ -144,16 +143,51 @@ function showPoint(pointId) {
         message += '<tr><th scope="row">成人口罩庫存</th><td>' + p.mask_adult + '</td></tr>';
         message += '<tr><th scope="row">兒童口罩庫存</th><td>' + p.mask_child + '</td></tr>';
       }
+      if(p.custom_note != '') {
+        message += '<tr><th scope="row">口罩銷售提醒</th><td>' + p.custom_note + '</td></tr>';
+      }
+      message += '<tr><th scope="row">備註</th><td>' + p.note.replace(/\\n/g, '<br />') + '</td></tr>';
       message += '<tr><th scope="row">電話</th><td>' + p.phone + '</td></tr>';
       message += '<tr><th scope="row">住址</th><td>' + p.address + '</td></tr>';
-      message += '<tr><th scope="row">營業日</th><td>' + p.available + '</td></tr>';
-      message += '<tr><th scope="row">備註</th><td>' + p.note.replace(/\\n/g, '<br />') + '</td></tr>';
       message += '<tr><th scope="row">更新時間</th><td>' + p.updated + '</td></tr>';
-      message += '<tr><th scope="row">導航</th><td>';
-      message += '<div class="btn-group-vertical" role="group" style="width: 100%;">';
-      message += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + lonLat[1] + ',' + lonLat[0] + '&travelmode=driving" target="_blank" class="btn btn-info btn-lg btn-block">Google</a>';
-      message += '<a href="https://wego.here.com/directions/drive/mylocation/' + lonLat[1] + ',' + lonLat[0] + '" target="_blank" class="btn btn-info btn-lg btn-block">Here WeGo</a>';
-      message += '<a href="https://bing.com/maps/default.aspx?rtp=~pos.' + lonLat[1] + '_' + lonLat[0] + '" target="_blank" class="btn btn-info btn-lg btn-block">Bing</a>';
+      message += '<tr><td colspan="2">';
+      if(p.service_periods != '') {
+        var sParts = p.service_periods.split('');
+        message += '<table class="table table-bordered text-center" style="color: whilte;">';
+        message += '<thead class="table-dark"><tr><th></th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr></thead><tbody>';
+        message += '<tr><td class="table-dark">上</td>';
+        for(i = 0; i < 7; i++) {
+          if(sParts[i] == 'N') {
+            message += '<td class="table-success"><i class="fa fa-check-circle"></i></td>';
+          } else {
+            message += '<td class="table-danger"><i class="fa fa-times-circle"></i></td>';
+          }
+        }
+        message += '</tr>';
+        message += '<tr><td class="table-dark">下</td>';
+        for(i = 7; i < 14; i++) {
+          if(sParts[i] == 'N') {
+            message += '<td class="table-success"><i class="fa fa-check-circle"></i></td>';
+          } else {
+            message += '<td class="table-danger"><i class="fa fa-times-circle"></i></td>';
+          }
+        }
+        message += '</tr>';
+        message += '<tr><td class="table-dark">晚</td>';
+        for(i = 14; i < 21; i++) {
+          if(sParts[i] == 'N') {
+            message += '<td class="table-success"><i class="fa fa-check-circle"></i></td>';
+          } else {
+            message += '<td class="table-danger"><i class="fa fa-times-circle"></i></td>';
+          }
+        }
+        message += '</tr>';
+        message += '</tbody></table>';
+      }
+      message += '<hr /><div class="btn-group-vertical" role="group" style="width: 100%;">';
+      message += '<a href="https://www.google.com/maps/dir/?api=1&destination=' + lonLat[1] + ',' + lonLat[0] + '&travelmode=driving" target="_blank" class="btn btn-info btn-lg btn-block">Google 導航</a>';
+      message += '<a href="https://wego.here.com/directions/drive/mylocation/' + lonLat[1] + ',' + lonLat[0] + '" target="_blank" class="btn btn-info btn-lg btn-block">Here WeGo 導航</a>';
+      message += '<a href="https://bing.com/maps/default.aspx?rtp=~pos.' + lonLat[1] + '_' + lonLat[0] + '" target="_blank" class="btn btn-info btn-lg btn-block">Bing 導航</a>';
       message += '</div></td></tr>';
       message += '</tbody></table>';
       sidebarTitle.innerHTML = p.name;
