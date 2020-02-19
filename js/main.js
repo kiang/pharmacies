@@ -274,7 +274,7 @@ $.getJSON('json/points.json', {}, function(c) {
     }
     findTerms.push({
       value: p.id,
-      label: p.id + ' ' + p.name
+      label: p.id + ' ' + p.name + ' ' + p.address
     });
   }
   var countyOptions = '<option value="">--</option>';
