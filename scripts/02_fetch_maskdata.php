@@ -1,4 +1,9 @@
 <?php
+require dirname(__DIR__) . '/vendor/autoload.php';
+use Goutte\Client;
+$client = new Client();
+$client->request('GET', 'http://data.nhi.gov.tw/'); // touch index page
+
 $pFh = fopen(dirname(__DIR__) . '/raw/pharmacyMore.csv', 'r');
 $head = fgetcsv($pFh, 2048);
 $pharmacyMore = array();
@@ -8,7 +13,8 @@ while($line = fgetcsv($pFh, 2048)) {
 fclose($pFh);
 
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
-file_put_contents($maskDataFile, file_get_contents('http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv'));
+$client->request('GET', 'http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv');
+file_put_contents($maskDataFile, $client->getResponse()->getContent());
 $fh2 = fopen($maskDataFile, 'r');
 /**
 Array
