@@ -2,7 +2,6 @@
 require dirname(__DIR__) . '/vendor/autoload.php';
 use Goutte\Client;
 $client = new Client();
-$client->request('GET', 'http://data.nhi.gov.tw/'); // touch index page
 
 $pFh = fopen(dirname(__DIR__) . '/raw/pharmacyMore.csv', 'r');
 $head = fgetcsv($pFh, 2048);

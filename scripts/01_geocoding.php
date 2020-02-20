@@ -2,7 +2,6 @@
 require dirname(__DIR__) . '/vendor/autoload.php';
 use Goutte\Client;
 $client = new Client();
-$client->request('GET', 'http://data.nhi.gov.tw/'); // touch index page
 $client->request('GET', 'http://data.nhi.gov.tw/resource/Opendata/%E5%85%A8%E6%B0%91%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%9A%AA%E7%89%B9%E7%B4%84%E9%99%A2%E6%89%80%E5%9B%BA%E5%AE%9A%E6%9C%8D%E5%8B%99%E6%99%82%E6%AE%B5.csv');
 $noteFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.csv';
 file_put_contents($noteFile, $client->getResponse()->getContent());
