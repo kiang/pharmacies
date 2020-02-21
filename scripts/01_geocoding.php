@@ -1,4 +1,6 @@
 <?php
+$config = require __DIR__ . '/config.php';
+
 require dirname(__DIR__) . '/vendor/autoload.php';
 use Goutte\Client;
 $client = new Client();
@@ -18,7 +20,6 @@ while($line = fgetcsv($fh, 2048)) {
     }
 }
 
-$config = require __DIR__ . '/config.php';
 
 $fixes = array(
     '5901090092' => array(
@@ -257,4 +258,66 @@ while($line = fgetcsv($fh, 2048)) {
         }
     }
     fputcsv($oFh, $line);
+}
+
+$missingLines =
+'2101010013	松山健康服務中心	台北市松山區八德路４段６９４號１、２樓	(02)27653147
+2101100227	中山健康服務中心	台北市中山區松江路３６７號１樓	(02)25013363
+2101110027	內湖健康服務中心	台北市內湖區民權東路６段９９號	(02)27908387
+2101120014	南港健康服務中心	台北市南港區南港路１段３６０號１樓	(02)27868756
+2101150012	士林健康服務中心	台北市士林區中正路４３９號１樓	(02)28836268
+2101161033	北投健康服務中心	臺北市北投區石牌路２段１１１號	(02)28261026
+2101170050	信義健康服務中心	台北市信義區信義路５段１５號	(02)87804152
+2101180038	中正健康服務中心	台北市中正區牯嶺街２４號	(02)23210168
+2101191068	萬華健康服務中心	台北市萬華區東園街１５２號	(02)23395384
+2101200017	政大(文山健康服務中心)	臺北市文山區木柵路３段２２０號	(02)22343501';
+$lines = explode("\n", $missingLines);
+foreach($lines AS $line) {
+    $cols = explode("\t", $line);
+    $longLine = array_fill(0, 18, '');
+    $longLine[0] = $cols[0];
+    $longLine[1] = $cols[1];
+    $longLine[3] = $cols[3];
+    $longLine[4] = $cols[2];
+    $longLine[11] = '販售口罩時段為每星期一至星期日上午9點至12點';
+    if(!empty($longLine[4])) {
+        $tgosFile = dirname(__DIR__) . '/tgos/' . $longLine[4] . '.json';
+        if(!file_exists($tgosFile)) {
+            $apiUrl = $config['tgos']['url'] . '?' . http_build_query(array(
+                'oAPPId' => $config['tgos']['APPID'], //應用程式識別碼(APPId)
+                'oAPIKey' => $config['tgos']['APIKey'], // 應用程式介接驗證碼(APIKey)
+                'oAddress' => $longLine[4], //所要查詢的門牌位置
+                'oSRS' => 'EPSG:4326', //回傳的坐標系統
+                'oFuzzyType' => '2', //模糊比對的代碼
+                'oResultDataType' => 'JSON', //回傳的資料格式
+                'oFuzzyBuffer' => '0', //模糊比對回傳門牌號的許可誤差範圍
+                'oIsOnlyFullMatch' => 'false', //是否只進行完全比對
+                'oIsLockCounty' => 'true', //是否鎖定縣市
+                'oIsLockTown' => 'false', //是否鎖定鄉鎮市區
+                'oIsLockVillage' => 'false', //是否鎖定村里
+                'oIsLockRoadSection' => 'false', //是否鎖定路段
+                'oIsLockLane' => 'false', //是否鎖定巷
+                'oIsLockAlley' => 'false', //是否鎖定弄
+                'oIsLockArea' => 'false', //是否鎖定地區
+                'oIsSameNumber_SubNumber' => 'true', //號之、之號是否視為相同
+                'oCanIgnoreVillage' => 'true', //找不時是否可忽略村里
+                'oCanIgnoreNeighborhood' => 'true', //找不時是否可忽略鄰
+                'oReturnMaxCount' => '0', //如為多筆時，限制回傳最大筆數
+            ));
+            $content = file_get_contents($apiUrl);
+            file_put_contents($tgosFile, $content);
+        }
+        $content = file_get_contents($tgosFile);
+        $pos = strpos($content, '{');
+        $posEnd = strrpos($content, '}');
+        $json = json_decode(substr($content, $pos, $posEnd - $pos + 1), true);
+        if(isset($json['AddressList'][0])) {
+            $longLine[12] = $json['AddressList'][0]['X'];
+            $longLine[13] = $json['AddressList'][0]['Y'];
+            $longLine[14] = $json['AddressList'][0]['COUNTY'];
+            $longLine[15] = $json['AddressList'][0]['TOWN'];
+            $longLine[16] = $json['AddressList'][0]['VILLAGE'];
+        }
+    }
+    fputcsv($oFh, $longLine);
 }
