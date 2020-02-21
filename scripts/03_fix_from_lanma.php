@@ -24,6 +24,10 @@ $ref['5903271068'] = array(120.637229,24.178166);
 $ref['5931016004'] = array(121.4627493,25.0183429); // https://github.com/WJWang/mask-help-info-api/issues/2#issuecomment-583700370
 $ref['5931033130'] = array(121.517612,25.006090); // https://github.com/WJWang/mask-help-info-api/issues/2#issuecomment-589128402
 
+$ref['5931033176'] = array(121.518552,25.007578); // https://github.com/kiang/pharmacies/issues/7
+$ref['5931101455'] = array(121.461145,25.136232); // https://github.com/kiang/pharmacies/issues/7
+$ref['5931100092'] = array(121.461358,25.136273); // https://github.com/kiang/pharmacies/issues/7
+
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
 $pool[] = fgetcsv($fh, 2048);
