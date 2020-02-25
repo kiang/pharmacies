@@ -11,6 +11,22 @@ while($line = fgetcsv($pFh, 2048)) {
 }
 fclose($pFh);
 
+$today = date('Ymd');
+$codePoolFile = dirname(__DIR__) . '/json/codes.json';
+$codePool = array(
+    'date' => $today,
+    'pool' => array(),
+);
+if(file_exists($codePoolFile)) {
+    $codePool = json_decode(file_get_contents($codePoolFile), true);
+    if($codePool['date'] !== $today) {
+        $codePool = array(
+            'date' => $today,
+            'pool' => array(),
+        );
+    }
+}
+
 $maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
 $client->request('GET', 'http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv');
 file_put_contents($maskDataFile, $client->getResponse()->getContent());
@@ -30,6 +46,9 @@ Array
 $head = fgetcsv($fh2, 2048);
 $maskData = array();
 while($line = fgetcsv($fh2, 2048)) {
+    if(!isset($codePool['pool'][$line[0]])) {
+        $codePool['pool'][$line[0]] = 1;
+    }
     $maskData[$line[0]] = $line;
 }
 
@@ -56,7 +75,7 @@ $fc = array(
 );
 $head = fgetcsv($fh1, 2048);
 while($line = fgetcsv($fh1, 2048)) {
-    if(!isset($maskData[$line[0]])) {
+    if(!isset($codePool['pool'][$line[0]])) {
         continue;
     }
     $data = array_combine($head, $line);
@@ -64,6 +83,13 @@ while($line = fgetcsv($fh1, 2048)) {
         $data['備註'] = $pharmacyMore[$line[0]];
     }
     if(!empty($data['TGOS X'])) {
+        if(!isset($maskData[$line[0]])) {
+            $maskData[$line[0]] = array(
+                4 => 0,
+                5 => 0,
+                6 => '',
+            );
+        }
         $f = array(
             'type' => 'Feature',
             'properties' => array(
@@ -99,6 +125,8 @@ fclose($fh1);
 
 $jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 file_put_contents(dirname(__DIR__) . '/json/points.json', $jsonString);
+
+file_put_contents($codePoolFile, json_encode($codePool));
 
 if(!empty($maskData)) {
     $errorFh = fopen(dirname(__DIR__) . '/error.csv', 'w');
