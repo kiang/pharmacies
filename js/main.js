@@ -153,7 +153,7 @@ function showPoint(pointId) {
       message += '<tr><td colspan="2">';
       if(p.service_periods != '') {
         var sParts = p.service_periods.split('');
-        message += '<table class="table table-bordered text-center" style="color: whilte;">';
+        message += '<table class="table table-bordered text-center" style="color: black;">';
         message += '<thead class="table-dark"><tr><th></th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr></thead><tbody>';
         message += '<tr><td class="table-dark">上</td>';
         for(i = 0; i < 7; i++) {
