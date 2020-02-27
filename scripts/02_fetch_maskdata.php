@@ -1,4 +1,10 @@
 <?php
+$cronLock = __DIR__ . '/cron_lock';
+if(file_exists($cronLock)) {
+    //previous cron is still executing, don't push it~~~
+    exit();
+}
+file_put_contents($cronLock, '1');
 require dirname(__DIR__) . '/vendor/autoload.php';
 use Goutte\Client;
 $client = new Client();
@@ -138,3 +144,4 @@ if(!empty($maskData)) {
     }
     fclose($errorFh);
 }
+unlink($cronLock);

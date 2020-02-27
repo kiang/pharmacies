@@ -1,2 +1,3 @@
 scripts/config.php
 json/codes.json
+scripts/cron_lock
