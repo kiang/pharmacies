@@ -131,6 +131,9 @@ file_put_contents($codePoolFile, json_encode($codePool));
 if(!empty($maskData)) {
     $errorFh = fopen(dirname(__DIR__) . '/error.csv', 'w');
     foreach($maskData AS $line) {
+        array_pop($line);
+        array_pop($line);
+        array_pop($line);
         fputcsv($errorFh, $line);
     }
     fclose($errorFh);
