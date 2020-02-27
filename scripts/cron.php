@@ -4,7 +4,7 @@ if(file_exists($cronLock)) {
     //previous cron is still executing, don't push it~~~
     exit();
 }
-file_put_contents($cronLock, '1');
+file_put_contents($cronLock, date('Y-m-d H:i:s'));
 
 $rootPath = dirname(__DIR__);
 
