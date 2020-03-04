@@ -21,7 +21,7 @@ $ref['5903270810'] = array(120.639038,24.182868);
 $ref['5903270918'] = array(120.637262,24.177244);
 $ref['5903271068'] = array(120.637229,24.178166);
 
-$ref['5931016004'] = array(121.4627493,25.0183429); // https://github.com/WJWang/mask-help-info-api/issues/2#issuecomment-583700370
+$ref['5931016004'] = array(121.464886,25.018384); // corrected by Yiwen Chen from FB
 $ref['5931033130'] = array(121.517612,25.006090); // https://github.com/WJWang/mask-help-info-api/issues/2#issuecomment-589128402
 
 $ref['5931033176'] = array(121.518552,25.007578); // https://github.com/kiang/pharmacies/issues/7
