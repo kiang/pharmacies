@@ -1,9 +1,10 @@
 <?php
-require dirname(__DIR__) . '/vendor/autoload.php';
+$basePath = dirname(__DIR__);
+require $basePath . '/vendor/autoload.php';
 use Goutte\Client;
 $client = new Client();
 
-$pFh = fopen(dirname(__DIR__) . '/raw/pharmacyMore.csv', 'r');
+$pFh = fopen($basePath . '/raw/pharmacyMore.csv', 'r');
 $head = fgetcsv($pFh, 2048);
 $pharmacyMore = array();
 while($line = fgetcsv($pFh, 2048)) {
@@ -12,7 +13,7 @@ while($line = fgetcsv($pFh, 2048)) {
 fclose($pFh);
 
 $today = date('Ymd');
-$codePoolFile = dirname(__DIR__) . '/json/codes.json';
+$codePoolFile = $basePath . '/json/codes.json';
 $codePool = array(
     'date' => $today,
     'pool' => array(),
@@ -27,7 +28,7 @@ if(file_exists($codePoolFile)) {
     }
 }
 
-$maskDataFile = dirname(__DIR__) . '/raw/maskdata.csv';
+$maskDataFile = $basePath . '/raw/maskdata.csv';
 $client->request('GET', 'http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv');
 file_put_contents($maskDataFile, $client->getResponse()->getContent());
 $fh2 = fopen($maskDataFile, 'r');
@@ -52,7 +53,7 @@ while($line = fgetcsv($fh2, 2048)) {
     $maskData[$line[0]] = $line;
 }
 
-$cFh = fopen(dirname(__DIR__) . '/raw/custom_notices.csv', 'r');
+$cFh = fopen($basePath . '/raw/custom_notices.csv', 'r');
 $head = fgetcsv($cFh, 2048);
 /*
 Array
@@ -68,7 +69,7 @@ while($line = fgetcsv($cFh, 2048)) {
     $notices[$line[1]] = $line;
 }
 
-$fh1 = fopen(dirname(__DIR__) . '/data.csv', 'r');
+$fh1 = fopen($basePath . '/data.csv', 'r');
 $fc = array(
     'type' => 'FeatureCollection',
     'features' => array(),
@@ -124,12 +125,13 @@ while($line = fgetcsv($fh1, 2048)) {
 fclose($fh1);
 
 $jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-file_put_contents(dirname(__DIR__) . '/json/points.json', $jsonString);
+file_put_contents($basePath . '/json/points.json', $jsonString);
+file_put_contents($basePath . '/netlify/json/points.json', $jsonString);
 
 file_put_contents($codePoolFile, json_encode($codePool));
 
 if(!empty($maskData)) {
-    $errorFh = fopen(dirname(__DIR__) . '/error.csv', 'w');
+    $errorFh = fopen($basePath . '/error.csv', 'w');
     foreach($maskData AS $line) {
         array_pop($line);
         array_pop($line);
