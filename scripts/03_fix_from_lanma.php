@@ -29,6 +29,8 @@ $ref['5931101455'] = array(121.461145,25.136232); // https://github.com/kiang/ph
 $ref['5931100092'] = array(121.461358,25.136273); // https://github.com/kiang/pharmacies/issues/7
 $ref['5901092078'] = array(121.519123,25.0573489); // https://github.com/kiang/pharmacies/issues/8
 
+$ref['5932023094'] = array(121.217593,24.962847); // https://geobingan.info/report/04d252bd51d944379835d8dfa18dc2c2
+
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
 $pool[] = fgetcsv($fh, 2048);
