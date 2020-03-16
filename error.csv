@@ -1,2 +1,87 @@
-0145080011,衛生福利部花蓮醫院豐濱原住民分院,花蓮縣豐濱鄉豐濱村光豐路４１號,(03)8358141
-0291010010,連江縣立醫院,連江縣南竿鄉復興村２１７號,(083)623995
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"            <font face=""Arial"," Helvetica"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"   System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior"," SqlCommand cmdHandler"," SqlDataReader dataStream"
+"   System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds"," RunBehavior runBehavior"," String resetOptionsString"
+"   System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior"," RunBehavior runBehavior"," Boolean returnStream"," Boolean async"," Int32 timeout"," Task&amp; task"," Boolean asyncWrite"
+"   System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior"," RunBehavior runBehavior"," Boolean returnStream"," String method"," TaskCompletionSource`1 completion"," Int32 timeout"," Task&amp; task"
+"   System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion"," String methodName"," Boolean sendToPipe"," Int32 timeout"
+
+"   PSTCOM.Data.SQLHelper.ExecuteNonQuery(SqlConnection connection"," CommandType cmdType"
+"   PSTCOM.Data.SQLHelper.ExecuteNonQuery(String connectionString"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"   於 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior"," SqlCommand cmdHandler"," SqlDataReader dataStream"
+"   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds"," RunBehavior runBehavior"," String resetOptionsString"
+"   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior"," RunBehavior runBehavior"," Boolean returnStream"," Boolean async"," Int32 timeout"," Task& task"," Boolean asyncWrite"
+"   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior"," RunBehavior runBehavior"," Boolean returnStream"," String method"," TaskCompletionSource`1 completion"," Int32 timeout"," Task& task"
+"   於 System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion"," String methodName"," Boolean sendToPipe"," Int32 timeout"
+
+"   於 PSTCOM.Data.SQLHelper.ExecuteNonQuery(SqlConnection connection"," CommandType cmdType"
+"   於 PSTCOM.Data.SQLHelper.ExecuteNonQuery(String connectionString"
+
+
+
+
+
+
+
+
+
