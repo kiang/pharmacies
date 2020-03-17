@@ -126,7 +126,6 @@ fclose($fh1);
 
 $jsonString = json_encode($fc, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 file_put_contents($basePath . '/json/points.json', $jsonString);
-file_put_contents($basePath . '/netlify/json/points.json', $jsonString);
 
 file_put_contents($codePoolFile, json_encode($codePool));
 
