@@ -88,7 +88,7 @@ while($line = fgetcsv($fh1, 2048)) {
             $maskData[$line[0]] = array(
                 4 => 0,
                 5 => 0,
-                6 => '',
+                6 => date('Y/m/d H:i:s'),
             );
         }
         $f = array(
