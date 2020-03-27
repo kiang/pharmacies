@@ -129,13 +129,11 @@ file_put_contents($basePath . '/json/points.json', $jsonString);
 
 file_put_contents($codePoolFile, json_encode($codePool));
 
-if(!empty($maskData)) {
-    $errorFh = fopen($basePath . '/error.csv', 'w');
-    foreach($maskData AS $line) {
-        array_pop($line);
-        array_pop($line);
-        array_pop($line);
-        fputcsv($errorFh, $line);
-    }
-    fclose($errorFh);
+$errorFh = fopen($basePath . '/error.csv', 'w');
+foreach($maskData AS $line) {
+    array_pop($line);
+    array_pop($line);
+    array_pop($line);
+    fputcsv($errorFh, $line);
 }
+fclose($errorFh);
