@@ -34,6 +34,7 @@ $ref['5932023094'] = array(121.217593,24.962847); // https://geobingan.info/repo
 $ref['5931080148'] = array(121.352382,24.954769); // https://github.com/kiang/pharmacies/issues/13
 $ref['5932021643'] = array(121.226650,24.951139); // https://github.com/kiang/pharmacies/issues/13
 $ref['5932022373'] = array(121.229109,24.946061); // https://github.com/kiang/pharmacies/issues/13
+$ref['5941041322'] = array(120.254197,23.181737); // https://www.ptt.cc/bbs/Gossiping/M.1585483490.A.DAD.html
 
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
