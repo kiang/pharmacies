@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"            <font face=""Arial"," Helvetica"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"   System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject"
+"   System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection"," TaskCompletionSource`1 retry"
+"   System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection"
+
+
+
+"   PSTCOM.Data.SQLHelper.PrepareCommand(SqlCommand cmd"," SqlConnection conn"," SqlTransaction trans"," CommandType cmdType"
+"   PSTCOM.Data.SQLHelper.ExecuteDataSet(SqlConnection connection"," CommandType cmdType"
+"   PSTCOM.Data.SQLHelper.ExecuteDataSet(String connectionString"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"   於 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject"
+"   於 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection"," TaskCompletionSource`1 retry"
+"   於 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection"
+
+
+
+"   於 PSTCOM.Data.SQLHelper.PrepareCommand(SqlCommand cmd"," SqlConnection conn"," SqlTransaction trans"," CommandType cmdType"
+"   於 PSTCOM.Data.SQLHelper.ExecuteDataSet(SqlConnection connection"," CommandType cmdType"
+"   於 PSTCOM.Data.SQLHelper.ExecuteDataSet(String connectionString"
+
+
+
+
+
+
+
+
+
