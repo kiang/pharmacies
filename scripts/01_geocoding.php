@@ -319,8 +319,8 @@ foreach($lines AS $line) {
     $longLine[4] = $cols[2];
     $longLine[11] = '販售口罩時段為每星期一至星期日上午9點至12點';
     if(isset($note[$cols[0]])) {
-        $line[11] = $note[$cols[0]][1];
-        $line[17] = $note[$cols[0]][0];
+        $longLine[11] = $note[$cols[0]][1];
+        $longLine[17] = $note[$cols[0]][0];
     }
     if(!empty($longLine[4])) {
         $tgosFile = dirname(__DIR__) . '/tgos/' . $longLine[4] . '.json';
