@@ -20,7 +20,6 @@ while($line = fgetcsv($fh, 2048)) {
     }
 }
 
-
 $fixes = array(
     '5901090092' => array(
         '02 -25353536',
@@ -116,8 +115,10 @@ $head[15] = '鄉鎮市區';
 $head[16] = '村里';
 $head[17] = '看診星期';
 $oFh = fopen(dirname(__DIR__) . '/data.csv', 'w');
+$codePool = array();
 fputcsv($oFh, $head);
 while($line = fgetcsv($fh, 2048)) {
+    $codePool[$line[0]] = true;
     $line[4] = trim($line[4]);
     $line[12] = '';
     $line[13] = '';
@@ -202,6 +203,7 @@ while($line = fgetcsv($fh, 2048)) {
     if(false === strpos($line[1], '衛生所')) {
         continue;
     }
+    $codePool[$line[0]] = true;
     $line[4] = trim($line[4]);
     $line[12] = '';
     $line[13] = '';
@@ -308,10 +310,16 @@ $missingLines =
 5933053283	艾美藥局	新竹縣竹北市中正西路８２號１樓	(03)5557760
 5901013531	佑全松山南京東藥局	臺北市松山區南京東路５段２９１巷７號	(02)27687807
 5932077501	躍獅藥聯藥局	桃園市龜山區萬壽路２段９９３號	(03)3591976
+5903190586	樹孝炘星藥局	臺中市太平區樹孝路４７６號１樓	(04)23929578
+5907090023	金元發藥局	高雄市大社區中山路１９９號	(07)3542200
 0145080011	衛生福利部花蓮醫院豐濱原住民分院	花蓮縣豐濱鄉豐濱村光豐路４１號	(03)8358141';
 $lines = explode("\n", $missingLines);
 foreach($lines AS $line) {
     $cols = explode("\t", $line);
+    if(isset($codePool[$cols[0]])) {
+        //避免放入重複資料
+        continue;
+    }
     $longLine = array_fill(0, 18, '');
     $longLine[0] = $cols[0];
     $longLine[1] = $cols[1];
