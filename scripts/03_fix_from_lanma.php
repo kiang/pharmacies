@@ -175,6 +175,7 @@ $ref['5901192975'] = array(121.500294,25.026266);
 $ref['5901203302'] = array(121.567629,24.988659);
 $ref['5938022144'] = array(120.963386,23.964807);
 $ref['5905340271'] = array(120.200758,22.992167);
+$ref['5907320704'] = array(120.3224182,22.6488011); // https://github.com/kiang/pharmacies/issues/18
 
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
