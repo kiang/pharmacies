@@ -12,7 +12,7 @@ $fh = fopen($noteFile, 'r');
 $head = fgetcsv($fh, 2048);
 $note = array();
 while($line = fgetcsv($fh, 2048)) {
-    if($line[3] == 5 || false !== strpos($line[1], '衛生所')) {
+    if($line[3] == 5 || false !== strpos($line[1], '衛生所') || false !== strpos($line[1], '市立聯合醫院附設')) {
         $note[$line[0]] = array(
             $line[5], //看診星期
             $line[6], //看診備註
