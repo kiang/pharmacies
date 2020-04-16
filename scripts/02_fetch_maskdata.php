@@ -97,11 +97,11 @@ while($line = fgetcsv($fh1, 2048)) {
                 'id' => strval($line[0]),
                 'name' => strval($data['醫事機構名稱']),
                 'phone' => strval($data['電話']),
-                'address' => strval($data['地 址 ']),
+                'address' => strval($data['地址']),
                 'mask_adult' => intval($maskData[$line[0]][4]),
                 'mask_child' => intval($maskData[$line[0]][5]),
                 'updated' => strval($maskData[$line[0]][6]),
-                'available' => strval($data['固定看診時段 ']),
+                'available' => strval($data['固定看診時段']),
                 'note' => $data['備註'], // from https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=441&Mid=A111068
                 'custom_note' => isset($notices[$line[0]]) ? strval($notices[$line[0]][2]) : '', //藥局自行提供的備註訊息
                 'website' => !empty($notices[$line[0]]) ? strval($notices[$line[0]][3]) : '', //藥局自行提供的網址
