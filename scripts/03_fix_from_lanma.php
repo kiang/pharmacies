@@ -181,6 +181,9 @@ $ref['5917072242'] = array(120.651540,24.153553); // https://github.com/kiang/ph
 $ref['5903280601'] = array(120.649530,24.155145); // https://github.com/kiang/pharmacies/issues/21
 $ref['5936030077'] = array(120.653571,24.381416); // https://github.com/kiang/pharmacies/issues/24
 $ref['5936031583'] = array(120.654737,24.381160); // https://github.com/kiang/pharmacies/issues/25
+$ref['5903030110'] = array(120.625126,24.343187); // https://github.com/kiang/pharmacies/issues/26
+$ref['5903030156'] = array(120.625974,24.345864); // https://github.com/kiang/pharmacies/issues/27
+$ref['5936031707'] = array(120.620696,24.346877); // https://github.com/kiang/pharmacies/issues/28
 
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
