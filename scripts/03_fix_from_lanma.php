@@ -184,6 +184,17 @@ $ref['5936031583'] = array(120.654737,24.381160); // https://github.com/kiang/ph
 $ref['5903030110'] = array(120.625126,24.343187); // https://github.com/kiang/pharmacies/issues/26
 $ref['5903030156'] = array(120.625974,24.345864); // https://github.com/kiang/pharmacies/issues/27
 $ref['5936031707'] = array(120.620696,24.346877); // https://github.com/kiang/pharmacies/issues/28
+$ref['5903030030'] = array(120.619479,24.347282); // https://github.com/kiang/pharmacies/issues/29
+$ref['5935020111'] = array(120.685459,24.415525); // https://github.com/kiang/pharmacies/issues/30
+$ref['5935020077'] = array(120.675606,24.402059); // https://github.com/kiang/pharmacies/issues/31
+$ref['5935021261'] = array(120.655240,24.440862); // https://github.com/kiang/pharmacies/issues/32
+$ref['5935051867'] = array(120.910109,24.686933); // https://github.com/kiang/pharmacies/issues/33
+$ref['5935051572'] = array(120.908221,24.685976); // https://github.com/kiang/pharmacies/issues/34
+$ref['5935051616'] = array(120.906779,24.685596); // https://github.com/kiang/pharmacies/issues/35
+$ref['5935050271'] = array(120.938825,24.683100); // https://github.com/kiang/pharmacies/issues/36
+$ref['5935050208'] = array(120.925899,24.686474); // https://github.com/kiang/pharmacies/issues/37
+$ref['5935040408'] = array(120.879572,24.688741); // https://github.com/kiang/pharmacies/issues/38
+$ref['5935041996'] = array(120.866541,24.692195); // https://github.com/kiang/pharmacies/issues/39
 
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
