@@ -178,7 +178,7 @@ while($line = fgetcsv($fh, 2048)) {
 }
 
 $localFile = dirname(__DIR__) . '/raw/A21030000I-D21004-004.csv';
-$client->request('GET', 'https://data.nhi.gov.tw/Datasets/DatasetResource.ashx?rId=A21030000I-D21004-004');
+$client->request('GET', 'http://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21004-008');
 file_put_contents($localFile, $client->getResponse()->getContent());
 $fh = fopen($localFile, 'r');
 /*
