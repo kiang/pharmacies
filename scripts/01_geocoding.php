@@ -177,6 +177,7 @@ while($line = fgetcsv($fh, 2048)) {
     fputcsv($oFh, $line);
 }
 
+//https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=328
 $localFile = dirname(__DIR__) . '/raw/A21030000I-D21004-004.csv';
 $client->request('GET', 'http://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21004-008');
 file_put_contents($localFile, $client->getResponse()->getContent());
@@ -332,6 +333,8 @@ $missingLines =
 5907320982	康圓藥局	高雄市三民區大豐二路３５９．３６１號１樓	(07)3909978
 5911011629	百福新豐活力藥局	基隆市中正區新豐街４０５號	(02)24699990
 5907380353	桂林活力藥師藥局漢民店	高雄市小港區漢民路６９１－１及６９１－２號１樓	(07)8010636
+5931033943	崇恩藥局	新北市永和區成功路２段１３５號１樓	(02)89214022
+5939171119	順元藥局	雲林縣元長鄉中山路２５號	(05)7886555
 0145080011	衛生福利部花蓮醫院豐濱原住民分院	花蓮縣豐濱鄉豐濱村光豐路４１號	(03)8358141';
 $lines = explode("\n", $missingLines);
 foreach($lines AS $line) {
