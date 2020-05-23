@@ -1,4 +1,32 @@
 {
     "type": "FeatureCollection",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5940041668",
+                "name": "民雄照安藥局",
+                "phone": "05-2060368",
+                "address": "嘉義縣民雄鄉中樂路２５號１樓",
+                "mask_adult": 936,
+                "mask_child": 780,
+                "updated": "2020\/05\/24 07:02:36",
+                "available": "星期一上午看診、星期二上午看診、星期三上午看診、星期四上午看診、星期五上午看診、星期六上午看診、星期日上午看診、星期一下午看診、星期二下午看診、星期三下午看診、星期四下午看診、星期五下午看診、星期六下午看診、星期日下午看診、星期一晚上看診、星期二晚上看診、星期三晚上看診、星期四晚上看診、星期五晚上看診、星期六晚上看診、星期日晚上看診",
+                "note": "周一至周日8:00開始販售口罩，現場排隊，售完為止",
+                "custom_note": "",
+                "website": "",
+                "county": "嘉義縣",
+                "town": "民雄鄉",
+                "cunli": "東榮村",
+                "service_periods": "NNNNNNNNNNNNNNNNNNNNN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.430934,
+                    23.556181
+                ]
+            }
+        }
+    ]
 }
