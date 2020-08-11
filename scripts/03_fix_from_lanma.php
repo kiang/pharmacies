@@ -196,6 +196,7 @@ $ref['5935050208'] = array(120.925899,24.686474); // https://github.com/kiang/ph
 $ref['5935040408'] = array(120.879572,24.688741); // https://github.com/kiang/pharmacies/issues/38
 $ref['5935041996'] = array(120.866541,24.692195); // https://github.com/kiang/pharmacies/issues/39
 $ref['5903010501'] = array(120.727168,24.248238);
+$ref['5903230085'] = array(120.710446,24.148204); // https://github.com/kiang/pharmacies/issues/40
 
 $fh = fopen(dirname(__DIR__) . '/data.csv', 'r');
 $pool = array();
