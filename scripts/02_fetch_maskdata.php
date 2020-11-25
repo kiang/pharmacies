@@ -29,7 +29,7 @@ if(file_exists($codePoolFile)) {
 }
 
 $maskDataFile = $basePath . '/raw/maskdata.csv';
-$client->request('GET', 'http://data.nhi.gov.tw/Datasets/Download.ashx?rid=A21030000I-D50001-001&l=https://data.nhi.gov.tw/resource/mask/maskdata.csv');
+$client->request('GET', 'https://data.nhi.gov.tw/resource/mask/maskdata.csv');
 file_put_contents($maskDataFile, $client->getResponse()->getContent());
 $fh2 = fopen($maskDataFile, 'r');
 /**
