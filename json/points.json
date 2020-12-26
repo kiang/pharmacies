@@ -1,4 +1,32 @@
 {
     "type": "FeatureCollection",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5937140054",
+                "name": "正明藥局",
+                "phone": "(049)2523918",
+                "address": "彰化縣芬園鄉茄荖村芬草路一段２７３號",
+                "mask_adult": 522,
+                "mask_child": 909,
+                "updated": "2020\/12\/27 07:23:26",
+                "available": "星期一上午看診、星期二上午看診、星期三上午看診、星期四上午看診、星期五上午看診、星期六上午看診、星期日上午看診、星期一下午看診、星期二下午看診、星期三下午看診、星期四下午看診、星期五下午看診、星期六下午看診、星期日下午看診、星期一晚上看診、星期二晚上看診、星期三晚上看診、星期四晚上看診、星期五晚上看診、星期六晚上看診、星期日晚上看診",
+                "note": "星期一至星期六上午9:00開始販賣口罩.",
+                "custom_note": "",
+                "website": "",
+                "county": "彰化縣",
+                "town": "芬園鄉",
+                "cunli": "茄荖村",
+                "service_periods": "NNNNNNNNNNNNNNNNNNNNN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.644028,
+                    24.011888
+                ]
+            }
+        }
+    ]
 }
