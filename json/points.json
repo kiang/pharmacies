@@ -1,4 +1,32 @@
 {
     "type": "FeatureCollection",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5941041297",
+                "name": "台灣藥局",
+                "phone": "(06)5726126",
+                "address": "臺南市麻豆區信義路１１之１３號",
+                "mask_adult": 980,
+                "mask_child": 1580,
+                "updated": "2021\/03\/14 07:11:28",
+                "available": "星期一上午看診、星期二上午看診、星期三上午看診、星期四上午看診、星期五上午看診、星期六上午看診、星期日上午看診、星期一下午看診、星期二下午看診、星期三下午看診、星期四下午看診、星期五下午看診、星期六下午看診、星期日下午看診、星期一晚上看診、星期二晚上休診、星期三晚上看診、星期四晚上看診、星期五晚上看診、星期六晚上看診、星期日晚上看診",
+                "note": "星期一~日 08:00售完",
+                "custom_note": "",
+                "website": "",
+                "county": "臺南市",
+                "town": "麻豆區",
+                "cunli": "晋江里",
+                "service_periods": "NNNNNNNNNNNNNNNYNNNNN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.251004,
+                    23.181945
+                ]
+            }
+        }
+    ]
 }
