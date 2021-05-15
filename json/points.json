@@ -1,4 +1,32 @@
 {
     "type": "FeatureCollection",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5922010441",
+                "name": "穎川保健藥局",
+                "phone": "(05)2223609",
+                "address": "嘉義市東區仁武里中山路２０４號",
+                "mask_adult": 860,
+                "mask_child": 1510,
+                "updated": "2021\/05\/16 07:02:26",
+                "available": "星期一上午看診、星期二上午看診、星期三上午看診、星期四上午看診、星期五上午看診、星期六上午看診、星期日上午看診、星期一下午看診、星期二下午看診、星期三下午看診、星期四下午看診、星期五下午看診、星期六下午看診、星期日下午看診、星期一晚上看診、星期二晚上看診、星期三晚上看診、星期四晚上看診、星期五晚上看診、星期六晚上看診、星期日晚上看診",
+                "note": "固定周一到周日08:00開始發放號碼牌並依序販售口罩，售完為止；6月7日休息",
+                "custom_note": "",
+                "website": "",
+                "county": "嘉義市",
+                "town": "東區",
+                "cunli": "中央里",
+                "service_periods": "NNNNNNNNNNNNNNNNNNNNN"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.45172,
+                    23.48096
+                ]
+            }
+        }
+    ]
 }
