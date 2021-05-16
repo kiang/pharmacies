@@ -26,8 +26,6 @@ use PhpOffice\PhpSpreadsheet\Shared\OLE;
  * Class for creating PPS's for OLE containers.
  *
  * @author   Xavier Noguer <xnoguer@php.net>
- *
- * @category PhpSpreadsheet
  */
 class PPS
 {
@@ -194,6 +192,7 @@ class PPS
             . pack('V', isset($this->startBlock) ? $this->startBlock : 0)  // 120
             . pack('V', $this->Size)               // 124
             . pack('V', 0); // 128
+
         return $ret;
     }
 
