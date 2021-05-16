@@ -4,7 +4,7 @@ $config = require __DIR__ . '/config.php';
 require dirname(__DIR__) . '/vendor/autoload.php';
 use Goutte\Client;
 $client = new Client();
-$client->request('GET', 'http://data.nhi.gov.tw/resource/Opendata/%E5%85%A8%E6%B0%91%E5%81%A5%E5%BA%B7%E4%BF%9D%E9%9A%AA%E7%89%B9%E7%B4%84%E9%99%A2%E6%89%80%E5%9B%BA%E5%AE%9A%E6%9C%8D%E5%8B%99%E6%99%82%E6%AE%B5.csv');
+$client->request('GET', 'https://data.nhi.gov.tw/resource/Opendata/%e5%85%a8%e6%b0%91%e5%81%a5%e5%ba%b7%e4%bf%9d%e9%9a%aa%e7%89%b9%e7%b4%84%e9%99%a2%e6%89%80%e5%9b%ba%e5%ae%9a%e6%9c%8d%e5%8b%99%e6%99%82%e6%ae%b5.csv');
 $noteFile = dirname(__DIR__) . '/raw/A21030000I-D21006-001.csv';
 file_put_contents($noteFile, $client->getResponse()->getContent());
 
@@ -84,7 +84,7 @@ $fixes = array(
 );
 
 $localFile = dirname(__DIR__) . '/raw/A21030000I-D21005-004.csv';
-$client->request('GET', 'http://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21005-001');
+$client->request('GET', 'https://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21005-001');
 file_put_contents($localFile, $client->getResponse()->getContent());
 $fh = fopen($localFile, 'r');
 /*
@@ -179,7 +179,7 @@ while($line = fgetcsv($fh, 2048)) {
 
 //https://data.nhi.gov.tw/Datasets/DatasetDetail.aspx?id=328
 $localFile = dirname(__DIR__) . '/raw/A21030000I-D21004-004.csv';
-$client->request('GET', 'http://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21004-008');
+$client->request('GET', 'https://data.nhi.gov.tw/DataSets/DataSetResource.ashx?rId=A21030000I-D21004-008');
 file_put_contents($localFile, $client->getResponse()->getContent());
 $fh = fopen($localFile, 'r');
 /*

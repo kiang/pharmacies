@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "新竹縣竹北市中正西路１７６、１７８號１樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[新竹縣]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-174150),E:-1,N:-1",
+      "OutTraceInfo": "[新竹縣]\t { 模糊比對 } (竹北市)\t找到符合的[鄉鎮市區]，(中正西路)\t找到符合的[路街名]，(176178號)\t進行[雙號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -174150 號，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "新竹縣竹北市白地里13鄰中正西路2028號",
+      "COUNTY": "新竹縣",
+      "TOWN": "竹北市",
+      "VILLAGE": "白地里",
+      "NEIGHBORHOOD": "13鄰",
+      "ROAD": "中正西路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "2028號",
+      "X": 120.948026,
+      "Y": 24.843333
+    }
+  ]
+}</string>
