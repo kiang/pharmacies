@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "雲林縣麥寮鄉中山路３１３、３１５號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[雲林縣]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-312660),E:-1,N:-1",
+      "OutTraceInfo": "[雲林縣]\t { 模糊比對 } (麥寮鄉)\t找到符合的[鄉鎮市區]，(中山路)\t找到符合的[路街名]，(313315號)\t進行[單號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -312660 號，進行[找最小門牌的號之、之號]，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "雲林縣麥寮鄉麥豐村29鄰中山路655之30號",
+      "COUNTY": "雲林縣",
+      "TOWN": "麥寮鄉",
+      "VILLAGE": "麥豐村",
+      "NEIGHBORHOOD": "29鄰",
+      "ROAD": "中山路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "655之30號",
+      "X": 120.241079,
+      "Y": 23.752890
+    },
+    {
+      "FULL_ADDR": "雲林縣麥寮鄉麥豐村29鄰中山路655之50號",
+      "COUNTY": "雲林縣",
+      "TOWN": "麥寮鄉",
+      "VILLAGE": "麥豐村",
+      "NEIGHBORHOOD": "29鄰",
+      "ROAD": "中山路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "655之50號",
+      "X": 120.240292,
+      "Y": 23.753800
+    }
+  ]
+}</string>
