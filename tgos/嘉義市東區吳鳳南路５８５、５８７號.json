@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "嘉義市東區吳鳳南路５８５、５８７號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "3",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[嘉義市]\tT:1,V:-1,R:1,S:-1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:0(-584896),E:-1,N:-1",
+      "OutTraceInfo": "[嘉義市]\t { 模糊比對 } (東區)\t找到符合的[鄉鎮市區]，(吳鳳南路)\t找到符合的[路街名]，(585587號)\t進行[單號過濾]，進行[找小於且最接近的門牌號碼]，找到小於輸入的門牌號碼 -584896 號，進行[找最小門牌的號之、之號]，模糊比對找到 3 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "嘉義市東區興仁里13鄰吳鳳南路691號之1",
+      "COUNTY": "嘉義市",
+      "TOWN": "東區",
+      "VILLAGE": "興仁里",
+      "NEIGHBORHOOD": "13鄰",
+      "ROAD": "吳鳳南路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "691號之1",
+      "X": 120.459760,
+      "Y": 23.454419
+    },
+    {
+      "FULL_ADDR": "嘉義市東區興仁里13鄰吳鳳南路691號之2",
+      "COUNTY": "嘉義市",
+      "TOWN": "東區",
+      "VILLAGE": "興仁里",
+      "NEIGHBORHOOD": "13鄰",
+      "ROAD": "吳鳳南路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "691號之2",
+      "X": 120.459800,
+      "Y": 23.454440
+    },
+    {
+      "FULL_ADDR": "嘉義市東區興仁里13鄰吳鳳南路691號之3",
+      "COUNTY": "嘉義市",
+      "TOWN": "東區",
+      "VILLAGE": "興仁里",
+      "NEIGHBORHOOD": "13鄰",
+      "ROAD": "吳鳳南路",
+      "SECTION": "",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "NUMBER": "691號之3",
+      "X": 120.459840,
+      "Y": 23.454450
+    }
+  ]
+}</string>
