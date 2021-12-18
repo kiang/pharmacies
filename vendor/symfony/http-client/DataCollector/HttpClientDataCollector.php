@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\DataCollector\DataCollector;
 use Symfony\Component\HttpKernel\DataCollector\LateDataCollectorInterface;
+use Symfony\Component\VarDumper\Caster\ImgStub;
 
 /**
  * @author Jérémy Romey <jeremy@free-agent.fr>
@@ -25,7 +26,7 @@ final class HttpClientDataCollector extends DataCollector implements LateDataCol
     /**
      * @var TraceableHttpClient[]
      */
-    private $clients = [];
+    private array $clients = [];
 
     public function registerClient(string $name, TraceableHttpClient $client)
     {
@@ -97,6 +98,7 @@ final class HttpClientDataCollector extends DataCollector implements LateDataCol
         $errorCount = 0;
         $baseInfo = [
             'response_headers' => 1,
+            'retry_count' => 1,
             'redirect_count' => 1,
             'redirect_url' => 1,
             'user_data' => 1,
@@ -114,11 +116,11 @@ final class HttpClientDataCollector extends DataCollector implements LateDataCol
 
             unset($info['filetime'], $info['http_code'], $info['ssl_verify_result'], $info['content_type']);
 
-            if ($trace['method'] === $info['http_method']) {
+            if (($info['http_method'] ?? null) === $trace['method']) {
                 unset($info['http_method']);
             }
 
-            if ($trace['url'] === $info['url']) {
+            if (($info['url'] ?? null) === $trace['url']) {
                 unset($info['url']);
             }
 
@@ -128,8 +130,36 @@ final class HttpClientDataCollector extends DataCollector implements LateDataCol
                 }
             }
 
+            if (\is_string($content = $trace['content'])) {
+                $contentType = 'application/octet-stream';
+
+                foreach ($info['response_headers'] ?? [] as $h) {
+                    if (0 === stripos($h, 'content-type: ')) {
+                        $contentType = substr($h, \strlen('content-type: '));
+                        break;
+                    }
+                }
+
+                if (0 === strpos($contentType, 'image/') && class_exists(ImgStub::class)) {
+                    $content = new ImgStub($content, $contentType, '');
+                } else {
+                    $content = [$content];
+                }
+
+                $content = ['response_content' => $content];
+            } elseif (\is_array($content)) {
+                $content = ['response_json' => $content];
+            } else {
+                $content = [];
+            }
+
+            if (isset($info['retry_count'])) {
+                $content['retries'] = $info['previous_info'];
+                unset($info['previous_info']);
+            }
+
             $debugInfo = array_diff_key($info, $baseInfo);
-            $info = array_diff_key($info, $debugInfo) + ['debug_info' => $debugInfo];
+            $info = ['info' => $debugInfo] + array_diff_key($info, $debugInfo) + $content;
             unset($traces[$i]['info']); // break PHP reference used by TraceableHttpClient
             $traces[$i]['info'] = $this->cloneVar($info);
             $traces[$i]['options'] = $this->cloneVar($trace['options']);

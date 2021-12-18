@@ -39,10 +39,13 @@ class HttpBrowser extends AbstractBrowser
         parent::__construct([], $history, $cookieJar);
     }
 
-    protected function doRequest($request): Response
+    /**
+     * @param Request $request
+     */
+    protected function doRequest(object $request): Response
     {
         $headers = $this->getHeaders($request);
-        [$body, $extraHeaders] = $this->getBodyAndExtraHeaders($request);
+        [$body, $extraHeaders] = $this->getBodyAndExtraHeaders($request, $headers);
 
         $response = $this->client->request($request->getMethod(), $request->getUri(), [
             'headers' => array_merge($headers, $extraHeaders),
@@ -56,9 +59,9 @@ class HttpBrowser extends AbstractBrowser
     /**
      * @return array [$body, $headers]
      */
-    private function getBodyAndExtraHeaders(Request $request): array
+    private function getBodyAndExtraHeaders(Request $request, array $headers): array
     {
-        if (\in_array($request->getMethod(), ['GET', 'HEAD'])) {
+        if (\in_array($request->getMethod(), ['GET', 'HEAD']) && !isset($headers['content-type'])) {
             return ['', []];
         }
 
@@ -67,24 +70,19 @@ class HttpBrowser extends AbstractBrowser
         }
 
         if (null !== $content = $request->getContent()) {
+            if (isset($headers['content-type'])) {
+                return [$content, []];
+            }
+
             $part = new TextPart($content, 'utf-8', 'plain', '8bit');
 
             return [$part->bodyToString(), $part->getPreparedHeaders()->toArray()];
         }
 
         $fields = $request->getParameters();
-        $hasFile = false;
-        foreach ($request->getFiles() as $name => $file) {
-            if (!isset($file['tmp_name'])) {
-                continue;
-            }
 
-            $hasFile = true;
-            $fields[$name] = DataPart::fromPath($file['tmp_name'], $file['name']);
-        }
-
-        if ($hasFile) {
-            $part = new FormDataPart($fields);
+        if ($uploadedFiles = $this->getUploadedFiles($request->getFiles())) {
+            $part = new FormDataPart(array_merge($fields, $uploadedFiles));
 
             return [$part->bodyToIterable(), $part->getPreparedHeaders()->toArray()];
         }
@@ -93,16 +91,27 @@ class HttpBrowser extends AbstractBrowser
             return ['', []];
         }
 
-        return [http_build_query($fields, '', '&', PHP_QUERY_RFC1738), ['Content-Type' => 'application/x-www-form-urlencoded']];
+        array_walk_recursive($fields, $caster = static function (&$v) use (&$caster) {
+            if (\is_object($v)) {
+                if ($vars = get_object_vars($v)) {
+                    array_walk_recursive($vars, $caster);
+                    $v = $vars;
+                } elseif (method_exists($v, '__toString')) {
+                    $v = (string) $v;
+                }
+            }
+        });
+
+        return [http_build_query($fields, '', '&'), ['Content-Type' => 'application/x-www-form-urlencoded']];
     }
 
-    private function getHeaders(Request $request): array
+    protected function getHeaders(Request $request): array
     {
         $headers = [];
         foreach ($request->getServer() as $key => $value) {
             $key = strtolower(str_replace('_', '-', $key));
             $contentHeaders = ['content-length' => true, 'content-md5' => true, 'content-type' => true];
-            if (0 === strpos($key, 'http-')) {
+            if (str_starts_with($key, 'http-')) {
                 $headers[substr($key, 5)] = $value;
             } elseif (isset($contentHeaders[$key])) {
                 // CONTENT_* are not prefixed with HTTP_
@@ -118,5 +127,27 @@ class HttpBrowser extends AbstractBrowser
         }
 
         return $headers;
+    }
+
+    /**
+     * Recursively go through the list. If the file has a tmp_name, convert it to a DataPart.
+     * Keep the original hierarchy.
+     */
+    private function getUploadedFiles(array $files): array
+    {
+        $uploadedFiles = [];
+        foreach ($files as $name => $file) {
+            if (!\is_array($file)) {
+                return $uploadedFiles;
+            }
+            if (!isset($file['tmp_name'])) {
+                $uploadedFiles[$name] = $this->getUploadedFiles($file);
+            }
+            if (isset($file['tmp_name'])) {
+                $uploadedFiles[$name] = DataPart::fromPath($file['tmp_name'], $file['name']);
+            }
+        }
+
+        return $uploadedFiles;
     }
 }

@@ -12,10 +12,12 @@
 namespace Symfony\Component\Mime\Test\Constraint;
 
 use PHPUnit\Framework\Constraint\Constraint;
+use Symfony\Component\Mime\Message;
+use Symfony\Component\Mime\RawMessage;
 
 final class EmailHtmlBodyContains extends Constraint
 {
-    private $expectedText;
+    private string $expectedText;
 
     public function __construct(string $expectedText)
     {

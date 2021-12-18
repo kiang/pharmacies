@@ -16,8 +16,8 @@ use Symfony\Component\DomCrawler\Crawler;
 
 final class CrawlerSelectorTextSame extends Constraint
 {
-    private $selector;
-    private $expectedText;
+    private string $selector;
+    private string $expectedText;
 
     public function __construct(string $selector, string $expectedText)
     {
@@ -45,7 +45,7 @@ final class CrawlerSelectorTextSame extends Constraint
             return false;
         }
 
-        return $this->expectedText === trim($crawler->text());
+        return $this->expectedText === trim($crawler->text(null, true));
     }
 
     /**

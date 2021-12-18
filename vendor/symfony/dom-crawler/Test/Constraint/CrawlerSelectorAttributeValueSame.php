@@ -16,9 +16,9 @@ use Symfony\Component\DomCrawler\Crawler;
 
 final class CrawlerSelectorAttributeValueSame extends Constraint
 {
-    private $selector;
-    private $attribute;
-    private $expectedText;
+    private string $selector;
+    private string $attribute;
+    private string $expectedText;
 
     public function __construct(string $selector, string $attribute, string $expectedText)
     {
@@ -47,7 +47,7 @@ final class CrawlerSelectorAttributeValueSame extends Constraint
             return false;
         }
 
-        return $this->expectedText === trim($crawler->attr($this->attribute));
+        return $this->expectedText === trim($crawler->attr($this->attribute) ?? '');
     }
 
     /**

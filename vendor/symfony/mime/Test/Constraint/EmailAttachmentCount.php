@@ -12,12 +12,13 @@
 namespace Symfony\Component\Mime\Test\Constraint;
 
 use PHPUnit\Framework\Constraint\Constraint;
+use Symfony\Component\Mime\Message;
 use Symfony\Component\Mime\RawMessage;
 
 final class EmailAttachmentCount extends Constraint
 {
-    private $expectedValue;
-    private $transport;
+    private int $expectedValue;
+    private ?string $transport;
 
     public function __construct(int $expectedValue, string $transport = null)
     {

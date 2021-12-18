@@ -21,7 +21,7 @@ use Symfony\Component\Mime\Exception\LogicException;
  */
 class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
 {
-    private $cmd;
+    private string $cmd;
 
     /**
      * The $cmd pattern must contain a "%s" string that will be replaced
@@ -74,7 +74,7 @@ class FileBinaryMimeTypeGuesser implements MimeTypeGuesserInterface
         ob_start();
 
         // need to use --mime instead of -i. see #6641
-        passthru(sprintf($this->cmd, escapeshellarg((0 === strpos($path, '-') ? './' : '').$path)), $return);
+        passthru(sprintf($this->cmd, escapeshellarg((str_starts_with($path, '-') ? './' : '').$path)), $return);
         if ($return > 0) {
             ob_end_clean();
 

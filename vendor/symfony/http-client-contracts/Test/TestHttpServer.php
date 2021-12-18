@@ -14,27 +14,30 @@ namespace Symfony\Contracts\HttpClient\Test;
 use Symfony\Component\Process\PhpExecutableFinder;
 use Symfony\Component\Process\Process;
 
-/**
- * @experimental in 1.1
- */
 class TestHttpServer
 {
-    private static $started;
+    private static $process = [];
 
-    public static function start()
+    public static function start(int $port = 8057): Process
     {
-        if (self::$started) {
-            return;
+        if (isset(self::$process[$port])) {
+            self::$process[$port]->stop();
+        } else {
+            register_shutdown_function(static function () use ($port) {
+                self::$process[$port]->stop();
+            });
         }
 
         $finder = new PhpExecutableFinder();
-        $process = new Process(array_merge([$finder->find(false)], $finder->findArguments(), ['-dopcache.enable=0', '-dvariables_order=EGPCS', '-S', '127.0.0.1:8057']));
+        $process = new Process(array_merge([$finder->find(false)], $finder->findArguments(), ['-dopcache.enable=0', '-dvariables_order=EGPCS', '-S', '127.0.0.1:'.$port]));
         $process->setWorkingDirectory(__DIR__.'/Fixtures/web');
         $process->start();
+        self::$process[$port] = $process;
 
-        register_shutdown_function([$process, 'stop']);
-        sleep('\\' === \DIRECTORY_SEPARATOR ? 10 : 1);
+        do {
+            usleep(50000);
+        } while (!@fopen('http://127.0.0.1:'.$port, 'r'));
 
-        self::$started = true;
+        return $process;
     }
 }

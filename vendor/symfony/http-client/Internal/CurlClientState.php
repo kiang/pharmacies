@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\HttpClient\Internal;
 
+
 /**
  * Internal representation of the cURL client's state.
  *
@@ -20,16 +21,64 @@ namespace Symfony\Component\HttpClient\Internal;
  */
 final class CurlClientState extends ClientState
 {
-    /** @var resource */
-    public $handle;
+    public \CurlMultiHandle $handle;
     /** @var PushedResponse[] */
-    public $pushedResponses = [];
-    /** @var DnsCache */
+    public array $pushedResponses = [];
     public $dnsCache;
+    /** @var float[] */
+    public array $pauseExpiries = [];
+    public int $execCounter = \PHP_INT_MIN;
+    public $logger = null;
 
     public function __construct()
     {
         $this->handle = curl_multi_init();
         $this->dnsCache = new DnsCache();
+    }
+
+    public function reset()
+    {
+        if ($this->logger) {
+            foreach ($this->pushedResponses as $url => $response) {
+                $this->logger->debug(sprintf('Unused pushed response: "%s"', $url));
+            }
+        }
+
+        $this->pushedResponses = [];
+        $this->dnsCache->evictions = $this->dnsCache->evictions ?: $this->dnsCache->removals;
+        $this->dnsCache->removals = $this->dnsCache->hostnames = [];
+
+        if ($this->handle instanceof \CurlMultiHandle) {
+            if (\defined('CURLMOPT_PUSHFUNCTION')) {
+                curl_multi_setopt($this->handle, \CURLMOPT_PUSHFUNCTION, null);
+            }
+
+            $active = 0;
+            while (\CURLM_CALL_MULTI_PERFORM === curl_multi_exec($this->handle, $active));
+        }
+
+        foreach ($this->openHandles as [$ch]) {
+            if ($ch instanceof \CurlHandle) {
+                curl_setopt($ch, \CURLOPT_VERBOSE, false);
+            }
+        }
+
+        curl_multi_close($this->handle);
+        $this->handle = curl_multi_init();
+    }
+
+    public function __sleep(): array
+    {
+        throw new \BadMethodCallException('Cannot serialize '.__CLASS__);
+    }
+
+    public function __wakeup()
+    {
+        throw new \BadMethodCallException('Cannot unserialize '.__CLASS__);
+    }
+
+    public function __destruct()
+    {
+        $this->reset();
     }
 }
