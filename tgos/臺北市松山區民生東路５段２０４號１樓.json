@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "臺北市松山區民生東路５段２０４號１樓",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "2",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[臺北市]\tT:1,V:-1,R:1,S:1,L:-1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[臺北市]\t { 模糊比對 } (松山區)\t找到符合的[鄉鎮市區]，(民生東路)\t找到符合的[路街名]，(5)\t找到符合的[路段]，(204號)\t找到符合的[門牌號碼]，進行[雙號過濾]，模糊比對找到 2 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "臺北市松山區富泰里15鄰民生東路五段204號",
+      "COUNTY": "臺北市",
+      "TOWN": "松山區",
+      "VILLAGE": "富泰里",
+      "NEIGHBORHOOD": "15鄰",
+      "ROAD": "民生東路",
+      "SECTION": "5",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "AREA": "",
+      "NUMBER": "204號",
+      "X": 121.564770,
+      "Y": 25.058257
+    },
+    {
+      "FULL_ADDR": "臺北市松山區富泰里20鄰民生東路五段204號",
+      "COUNTY": "臺北市",
+      "TOWN": "松山區",
+      "VILLAGE": "富泰里",
+      "NEIGHBORHOOD": "20鄰",
+      "ROAD": "民生東路",
+      "SECTION": "5",
+      "LANE": "",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "AREA": "",
+      "NUMBER": "204號",
+      "X": 121.564770,
+      "Y": 25.058257
+    }
+  ]
+}</string>
