@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<string xmlns="http://tempuri.org/">{
+  "Info": [
+    {
+      "IsSuccess": "True",
+      "InAddress": "雲林縣台西鄉民族路３０巷２２－６號",
+      "InSRS": "EPSG:4326",
+      "InFuzzyType": "[單雙號機制]+[最近門牌號機制]",
+      "InFuzzyBuffer": "0",
+      "InIsOnlyFullMatch": "False",
+      "InIsLockCounty": "True",
+      "InIsLockTown": "False",
+      "InIsLockVillage": "False",
+      "InIsLockRoadSection": "False",
+      "InIsLockLane": "False",
+      "InIsLockAlley": "False",
+      "InIsLockArea": "False",
+      "InIsSameNumber_SubNumber": "True",
+      "InCanIgnoreVillage": "True",
+      "InCanIgnoreNeighborhood": "True",
+      "InReturnMaxCount": "0",
+      "OutTotal": "1",
+      "OutMatchType": "模糊比對",
+      "OutMatchCode": "[雲林縣]\tT:1,V:-1,R:1,S:-1,L:1,A:-1,SA:-1,T:-1,AR:-1,NO:1,E:-1,N:-1",
+      "OutTraceInfo": "[雲林縣]\t { 模糊比對 } (臺西鄉)\t找到符合的[鄉鎮市區]，(民族路)\t找到符合的[路街名]，(30巷)\t找到符合的[巷]，(22－6號)\t找到符合的[門牌號碼]，模糊比對找到 1 筆符合的門牌地址。"
+    }
+  ],
+  "AddressList": [
+    {
+      "FULL_ADDR": "雲林縣臺西鄉海南村6鄰民族路30巷22之6號",
+      "COUNTY": "雲林縣",
+      "TOWN": "臺西鄉",
+      "VILLAGE": "海南村",
+      "NEIGHBORHOOD": "6鄰",
+      "ROAD": "民族路",
+      "SECTION": "",
+      "LANE": "30巷",
+      "ALLEY": "",
+      "SUB_ALLEY": "",
+      "TONG": "",
+      "AREA": "",
+      "NUMBER": "22之6號",
+      "X": 120.196969,
+      "Y": 23.697043
+    }
+  ]
+}</string>
