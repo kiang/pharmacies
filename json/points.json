@@ -1,4 +1,32 @@
 {
     "type": "FeatureCollection",
-    "features": []
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "id": "5941051453",
+                "name": "佳佳藥局",
+                "phone": "(06)7227639",
+                "address": "臺南市佳里區中山路３８６號",
+                "mask_adult": 2340,
+                "mask_child": 840,
+                "updated": "2022\/01\/16 07:38:23",
+                "available": "星期一上午看診、星期二上午看診、星期三上午看診、星期四上午看診、星期五上午看診、星期六上午看診、星期日上午休診、星期一下午看診、星期二下午看診、星期三下午看診、星期四下午看診、星期五下午看診、星期六下午看診、星期日下午休診、星期一晚上看診、星期二晚上看診、星期三晚上看診、星期四晚上看診、星期五晚上看診、星期六晚上看診、星期日晚上休診",
+                "note": "禮拜一~日 08:00售完",
+                "custom_note": "",
+                "website": "",
+                "county": "臺南市",
+                "town": "佳里區",
+                "cunli": "東寧里",
+                "service_periods": "NNNNNNNNNNNNNNNNNNNNY"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.176808,
+                    23.162772
+                ]
+            }
+        }
+    ]
 }
